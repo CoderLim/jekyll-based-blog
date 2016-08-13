@@ -1,0 +1,51 @@
+# Basic
+title: CoderGLM
+subtitle: Talk is cheap, show me the code!
+welcome_message: 欢迎来到我的博客！
+description: 嗨，我是耿笠茗，一名来自中国的 iOS / ReactNative 开发者。现居北京，就职于 易建科技。正在修行，探求创意之源。
+creator: <a href="http://gengliming.com">@gengliming</a>
+
+url: "http://gengliming.com"
+
+permalink: /:year/:month/:title/
+
+# Format
+highlighter: rouge
+markdown: kramdown
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", tables]
+
+# supported colors: blue, green, purple, red, orange or slate. If you need clear, leave it empty.
+cover_color: slate
+
+blog_button:
+    title: 博客
+    description: 访问博客
+
+nav:
+    - {title: 项目, description: 我的项目, url: '#'}
+    - {title: 关于, description: 了解更多关于我, url: '#'}
+    - {title: 订阅, description: 邮件订阅本站, url: '//store.objccn.io/subscribe'}
+
+# Pagination
+gems: [jekyll-paginate]
+paginate: 10
+paginate_path: "page/:num/"
+
+# Comment
+comment:
+    disqus: gengliming
+    # duoshuo:
+# Social
+social:
+    facebook: liming.geng.9
+    github: CoderGLM
+    stackoverflow: users/6592713/coderglm
+    twitter: CoderGLM
+    gplus: 107108267983477358170
+    mail: 779793115@qq.com
+
+# Google Analytics
+ga:
+    id: UA-25719337-2
+    host: gengliming.com
