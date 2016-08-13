@@ -22,9 +22,9 @@
           <div>
             <nav class="cover-navigation cover-navigation--primary">
               <ul class="navigation">
-                <li class="navigation__item"><a href="{{"/#blog" | prepend: site.baseurl}}" title="{{site.blog_button.description}}" class="blog-button">{{site.blog_button.title}}</a></li>
+                <li class="navigation__item"><a href="{{"/#blog" title="{{site.blog_button.description}}" class="blog-button">{{site.blog_button.title}}</a></li>
                 {% for item in site.nav %}
-                  <li class="navigation__item"><a href="{{item.url}}" target="_blank" title="{{item.description}}">{{item.title}}</a></li>
+                  <li class="navigation__item"><a href="{{item.url | prepend: site.baseurl}}" target="_blank" title="{{item.description}}">{{item.title}}</a></li>
                 {% endfor %}
               </ul>
             </nav>
@@ -42,3 +42,4 @@
     {% endif %}
   </div>
 </header>
+<header class="panel-cover {% if page.layout == 'post' or page.layout == 'page' %}panel-cover--collapsed{% endif %}" style="background-image: url({{"/assets/images/background-cover.jpg" | prepend: site.baseurl}})">
