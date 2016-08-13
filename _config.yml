@@ -52,4 +52,4 @@ ga:
 
 #
 site:
-  baseurl: 'https://coderglm.github.io/jekyll-based-blog/'
+    baseurl: 'https://coderglm.github.io/jekyll-based-blog/'
