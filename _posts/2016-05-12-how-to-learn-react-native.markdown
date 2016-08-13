@@ -1,7 +1,7 @@
 ---
 layout: post
-title: react-native入门
-date: 2016-05-13 23:32:54.000000000 +09:00
+title: react-native入门1
+date: 2016-05-12 23:32:54.000000000 +09:00
 tags: 胡言乱语集
 ---
 
