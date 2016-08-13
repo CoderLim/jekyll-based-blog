@@ -49,3 +49,7 @@ social:
 ga:
     id: UA-25719337-2
     host: gengliming.com
+
+#
+site:
+  baseurl: 'https://coderglm.github.io/jekyll-based-blog/'
