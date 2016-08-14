@@ -25,7 +25,7 @@ blog_button:
 
 nav:
     - {title: 项目, description: 我的项目, url: '#'}
-    - {title: 关于, description: 了解更多关于我, url: {{'/about.html'| prepend: site.baseurl}}}
+    - {title: 关于, description: 了解更多关于我, url: '/about.html'}
     - {title: 订阅, description: 邮件订阅本站, url: '//store.objccn.io/subscribe'}
 
 # Pagination
