@@ -6,7 +6,7 @@ description: 嗨，我是耿笠茗，一名来自中国的 iOS / ReactNative 开
 creator: <a href="http://gengliming.com">@gengliming</a>
 
 url: "http://gengliming.com"
-baseurl: "https://coderglm.github.io/jekyll-based-blog"
+baseurl: "http://gengliming.com"
 
 permalink: /:year/:month/:title/
 
