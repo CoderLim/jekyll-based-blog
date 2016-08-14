@@ -156,7 +156,8 @@
 }
 
 .cover-slate {
-  @include linear-gradient(140deg, rgba($slate,.6) 20%, rgba(darken($slate, 20%),.8));
+  /*@include linear-gradient(140deg, rgba($slate,.6) 20%, rgba(darken($slate, 20%),.8));*/
+  linear-gradient(140deg,rgba(136, 91, 10, 0.6) 20%, rgba(130, 136, 46, 0.8))
 }
 
 .cover-disabled {
