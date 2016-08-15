@@ -15,7 +15,8 @@ tags: 前端相关
 这里有篇文章，介绍的点很多：[点击进入](http://www.jianshu.com/p/be5aea4a222f)
 
 # Content
-***
+----------
+
 #### 1、减少Http请求
 终端用户80%的响应时间花费在前端。这些时间大多数是与下载所有组件息息相关的，比如图片，样式表，脚本等。减少组件数量也就是减少渲染页面时需要的Http请求数。这个是加快页面速度的关键。
 
@@ -29,6 +30,7 @@ tags: 前端相关
 
 
 #### 2、减少DNS查询
+
 DNS(Domain Name System)用来映射主机名和ip地址。当你输入网址到你的浏览器，浏览器会与DNS解析器通讯返回服务器的ip地址。DNS有时间消耗，通常查询一个主机名的ip地址需要20-120毫秒。浏览器只有在DNS找到对应主机名的ip地址完成后，才能下载任何东西。
 
 缓存DNS查询可以得到更好的性能。缓存可以出现在一个由用户的ISP（互联网服务提供商）或者局域网维持的特殊缓存服务器，但是也会出现在个人用户电脑。DNS信息保存在操作系统的DNS缓存中（在window里叫做“DNS Client Service”）。大多数浏览器有自己的缓存，与操作系统的缓存是分开的。只要浏览器在自己的缓存中保存着DNS记录，当请求一个记录时就不会理会操作系统。
@@ -43,12 +45,19 @@ IE默认缓存DNS查询是30分钟，是由注册表的DnsCacheTimeout指定的�
 
 
 #### 3、避免重定向
+
 #### 4、使用Ajax缓存
+
 #### 5、延迟加载组件
+
 #### 6、预加载组件
+
 #### 7、减少DOM元素数量
+
 #### 8、跨域分离组件
+
 #### 9、最小化iframe个数
+
 iframe允许html文档嵌入到父文档。理解iframe如何工作才能高效使用它。
 
 iframe pros(优点，网络用语):
@@ -62,6 +71,7 @@ iframe cons(缺点):
 (3) 非语义的*
 
 #### 10、避免404错误
+
 注意这里是找不到文件，而不是自定义404页面。
 
 HTTP请求是很耗时的，因此发送一个HTTP请求并且收到不可用的响应（i.e. 404 Not Found）是完全没用的，会降低用户体验。
@@ -69,13 +79,19 @@ HTTP请求是很耗时的，因此发送一个HTTP请求并且收到不可用的
 有些站点有有用的404页面"Did you mean X?"，这个有很好的用户体验，但是也同样消耗了服务器资源（比如数据库）。更糟糕的是当页面链接到外部Javascript报404错误。首先，这个下载会阻塞并行下载，然后浏览器会把404响应当成js代码解析，试图在里面找到可用的内容。
 
 # Server
-***
+----------
 #### 1、使用CND
+
 #### 2、设置头文件过期或者静态缓存
+
 #### 3、Gzip压缩组件
+
 #### 4、配置ETags
+
 #### 5、尽早释放缓存
+
 #### 6、使用GET方法发送Ajax请求
+
 Yahoo!Mail团队在使用XMLHttpRequest时发现：POST请求在浏览器中的实现包含两步处理：首先发送headers，然后发送数据。因此最好用GET，
 这种方法只会使用一个TCP包去发送（除非你有很多cookie）。最大的URL长度在IE里是2k，因此如果你发送的多于2k最好就不要用GET。
 
@@ -96,22 +112,33 @@ Yahoo!Mail团队在使用XMLHttpRequest时发现：POST请求在浏览器中的�
 的子域名，并把cookie写在子域名下。
 
 # CSS
-***
+----------
 #### 1、把样式表放到上边
+
 #### 2、避免Css表达式
+
 #### 3、选择<link>而不是@import
+
 #### 4、不要使用过滤器
+
 #### 5、[如何提升 CSS 选择器性能](http://www.jianshu.com/p/268c7f3dd7a6)
 
 # JS
-***
+----------
 #### 1、把Scripts放到底部
+
 #### 2、使用外部的js和css
+
 #### 3、压缩js和css
+
 #### 4、移除重复的Scripts
+
 #### 5、最小化DOM访问
+
 #### 6、预加载组件
+
 #### 7、开发灵活的事件句柄
+
 有时因为有很多经常执行的事件附加到了DOM树里不同的元素上，导致页面响应慢。这就是使用时间代理是好方法的原因。如果你的div里有10个按钮，应该附加一个事件到div的wrapper上，而不是每个按钮都绑定一个事件。事件向上冒泡，你就能捕获事件，并且知道是哪个button产生的。
 
 你也不必为了操作DOM树而等待onload事件。经常你需要的就是想访问的在DOM树里的元素是可用的。你不必等待所有图片下载完。DOMContentLoaded你可以用来取代onload，但是需要所有浏览器都支持才可用，你可以是YUI事件工具，它有onAvailable方法。
@@ -119,11 +146,15 @@ Yahoo!Mail团队在使用XMLHttpRequest时发现：POST请求在浏览器中的�
 更多的信息请查看Julien Lecomte写的YUI theatre's "High Performance Ajax Applications"
 
 # Images
-***
+----------
 #### 1、优化图片
+
 #### 2、优化CSS Sprites
+
 #### 3、不要在html中缩放图片
+
 #### 4、使favicon.ico变小且可缓存
+
 favicon.ico 是保存在服务器网站根目录的图片。它是一个必然的危害，因为即使你不关心它，浏览器仍然会请求它，因此最好不要产生404响应。而且因为在同一个服务器上，每次请求它cookie都会被发送。这个图片还会阻碍下载队列，比如在ie中，当你在onload中请求额外的组件时，favicon将会在额外组件之前下载。
 
 因此减缓有favicon这个缺点应确保：
@@ -133,15 +164,16 @@ favicon.ico 是保存在服务器网站根目录的图片。它是一个必然�
 [imagemagick](http://www.imagemagick.org/script/index.php)可以帮你创建小favicons.
 
 # Mobile
-****
+----------
 #### 1、使组件小于25KB
+
 #### 2、将组件打包到多部分的文档中
 
 # Browser
-****
-#### 1、避免reflow：[Repaint 、Reflow 的基本认识和优化 (2)](https://segmentfault.com/a/1190000002629708)
+----------
+#### 1、避免reflow：[Repaint 、Reflow 的基本认识和优化][2]
 
 
 # 参考：
-1、[Best Practices for Speeding Up Your Web Site](https://developer.yahoo.com/performance/rules.html#cookie_free=)
-2、[Repaint 、Reflow 的基本认识和优化 (2)](https://segmentfault.com/a/1190000002629708)
+[1]: https://developer.yahoo.com/performance/rules.html#cookie_free= "Best Practices for Speeding Up Your Web Site" <br/>
+[2]: https://segmentfault.com/a/1190000002629708 "Repaint 、Reflow 的基本认识和优化"
