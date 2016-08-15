@@ -41,9 +41,10 @@ github地址[在这里](https://github.com/facebook/react-native)，在examples�
 
 # 7、看看真机运行效果
 这里只说下ios的，android可以参考[ React Native真机调试 ](http://my.oschina.net/imot/blog/512808)
-1、将AppDelegate中sourceURL的localhost改为电脑的ip；
-2、启动服务器，启动方法在上面的5.1.3有提到；
-3、运行程序。
+
+1. 将AppDelegate中sourceURL的localhost改为电脑的ip；
+2. 启动服务器，启动方法在上面的5.1.3有提到；
+3. 运行程序。
 ps：手机和电脑要用数据线连接；手机和电脑要连到相同的wifi下
 
 # 8、如何运行在Android模拟器
