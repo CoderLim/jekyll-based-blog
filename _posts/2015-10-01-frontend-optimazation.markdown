@@ -15,9 +15,10 @@ tags: 前端相关
 这里有篇文章，介绍的点很多：[点击进入](http://www.jianshu.com/p/be5aea4a222f)
 
 # Content
-----------
+- - - 
 
 #### 1、减少Http请求
+
 终端用户80%的响应时间花费在前端。这些时间大多数是与下载所有组件息息相关的，比如图片，样式表，脚本等。减少组件数量也就是减少渲染页面时需要的Http请求数。这个是加快页面速度的关键。
 
 减少组件数量的一种方式是简化页面设计。但是又没有一种方式可以创建更丰富的内容的同时也能获得更快的响应呢？这里有几个技术点。
@@ -40,9 +41,6 @@ IE默认缓存DNS查询是30分钟，是由注册表的DnsCacheTimeout指定的�
 当客户端的DNS缓存是空的（包括浏览器和操作系统），DNS查询的次数与唯一的主机名的个数相等。这些包括页面的URL、脚本文件、样式表、Flash对象等的主机名。减少唯一的主机名就能减少DNS查询。
 
 减少唯一主机名的数量潜在的会减少发生在页面中并行下载的数量。避免DNS查询减少响应次数，但是减少并行下载的数量可能会增加响应次数。我的指导意见是分离这些组件到2-4个主机名下。这个结果是在减少DNS查询和允许高度并行下载之间的折中。
-
-
-
 
 #### 3、避免重定向
 
@@ -79,7 +77,9 @@ HTTP请求是很耗时的，因此发送一个HTTP请求并且收到不可用的
 有些站点有有用的404页面"Did you mean X?"，这个有很好的用户体验，但是也同样消耗了服务器资源（比如数据库）。更糟糕的是当页面链接到外部Javascript报404错误。首先，这个下载会阻塞并行下载，然后浏览器会把404响应当成js代码解析，试图在里面找到可用的内容。
 
 # Server
-----------
+
+- - -
+
 #### 1、使用CND
 
 #### 2、设置头文件过期或者静态缓存
@@ -97,12 +97,17 @@ Yahoo!Mail团队在使用XMLHttpRequest时发现：POST请求在浏览器中的�
 
 一个有趣的副作用是没有发送任何数据的POST方法表现的就像GET。基于[HTTP说名](www.w3.org/Protocols/rfc2616/rfc2616-sec9.html),GET
 的意思是获取信息，因此当你只想获取数据使用GET是有道理的（从语义上），而不是发送数据保存到服务端。
-####7、Image避免空src
+
+#### 7、Image避免空src
 
 # Cookie
-***
+
+- - -
+
 #### 1、减小Cookie大小
+
 #### 2、为组件使用无Cookie的域名
+
 当浏览器请求一张静态图片时也会带着cookie，但是服务器并不会使用这些cookie。因此他们无合理原因的创建了网络流量。你应该确保静态组件应该是无cookie的请求。创建一个自域名并把你的静态资源放那里。
 
 如果你的域名是www.example.org,你可以安排你的静态资源在static.example.org。但是，如果你已经设置cookie在顶级域名example.org而不是www.example.org，那么所有的请求到static.example.org的请求也会包括这些cookie。这种情况下，你就应该购买一个完整的新域名了，
@@ -112,7 +117,9 @@ Yahoo!Mail团队在使用XMLHttpRequest时发现：POST请求在浏览器中的�
 的子域名，并把cookie写在子域名下。
 
 # CSS
-----------
+
+- - -
+
 #### 1、把样式表放到上边
 
 #### 2、避免Css表达式
@@ -124,7 +131,9 @@ Yahoo!Mail团队在使用XMLHttpRequest时发现：POST请求在浏览器中的�
 #### 5、[如何提升 CSS 选择器性能](http://www.jianshu.com/p/268c7f3dd7a6)
 
 # JS
-----------
+
+- - -
+
 #### 1、把Scripts放到底部
 
 #### 2、使用外部的js和css
@@ -146,7 +155,9 @@ Yahoo!Mail团队在使用XMLHttpRequest时发现：POST请求在浏览器中的�
 更多的信息请查看Julien Lecomte写的YUI theatre's "High Performance Ajax Applications"
 
 # Images
-----------
+
+- - -
+
 #### 1、优化图片
 
 #### 2、优化CSS Sprites
@@ -164,13 +175,17 @@ favicon.ico 是保存在服务器网站根目录的图片。它是一个必然�
 [imagemagick](http://www.imagemagick.org/script/index.php)可以帮你创建小favicons.
 
 # Mobile
-----------
+
+- - -
+
 #### 1、使组件小于25KB
 
 #### 2、将组件打包到多部分的文档中
 
 # Browser
-----------
+
+- - -
+
 #### 1、避免reflow：[Repaint 、Reflow 的基本认识和优化][2]
 
 
