@@ -48,14 +48,15 @@ ps：手机和电脑要用数据线连接；手机和电脑要连到相同的wif
 
 # 8、如何运行在Android模拟器
 安装jdk和android studio（都装最新的就行了），以下问题都是我按顺序遇到的：<br/>
-1. SDK location not found. Define location with sdk.dir in the locSDK location not found. Define location with sdk.dir in the local.properties file or with an ANDROID_HOME environment variable
-    * 如何查看sdk location：打开android studio --> preferences -> 查找sdk即可看到路径；
-    * 设置ANDROID_HOME：参考https://spring.io/guides/gs/android/
 
-`Mac OS X
-export ANDROID_HOME= sdk 路径
-export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools`
+1. SDK location not found. Define location with sdk.dir in the locSDK location not found. Define location with sdk.dir in the local.properties file or with an ANDROID_HOME environment variable <br/>
 
+ *  如何查看sdk location：打开android studio --> preferences -> 查找sdk即可看到路径；*
+ *  设置ANDROID_HOME：参考https://spring.io/guides/gs/android/ *
+
+    `Mac OS X
+    export ANDROID_HOME= sdk 路径
+    export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools` <br/>
 
 2. failed to find target with hash string 'android-23' in: 你的sdk的路径：直接在android studio中的preferences里搜sdk，然后apply就行了
 
