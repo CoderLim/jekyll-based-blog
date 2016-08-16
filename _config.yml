@@ -8,8 +8,14 @@ welcome_message: 欢迎来到我的博客！
 description: 嗨，我是耿笠茗，一名来自中国的 iOS / ReactNative 开发者。现居北京，就职于 易建科技。正在努提高中...
 creator: <a href="http://gengliming.com">@gengliming</a>
 
+# 本站地址
 url: "http://gengliming.com"
+
+# 本站域名
 #baseurl: "http://gengliming.com"
+
+# 图片服务器域名
+imageurl: "http://gengliming.com"
 
 permalink: /:year/:month/:title/
 
