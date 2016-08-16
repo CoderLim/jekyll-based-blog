@@ -120,9 +120,9 @@ Redux由Action、Reducer、Storage三部分组成，先来看看官方代码（�
 这也很容理解上面的**可预测**是什么意思，数据流保证了单向流动，store集中管理state，除了reducer没有任何方法修改state，还有重要的一点是state是不可改变的，因为reducer返回的下一个状态state2是基于上一个状态state1的，而不是修改state1然后返回state1.
 
 看完之后有的人酱紫：
-![image]({{ site.imageurl }}/assets/images/2016/react-native-redux-scronful1.png) <br/>
+![image]({{ site.imageurl }}/assets/images/2016/react-native-redux-scronful1.jpg) <br/>
 还有的人酱紫：
-![image]({{ site.imageurl }}/assets/images/2016/react-native-redux-maoli.png) <br/>
+![image]({{ site.imageurl }}/assets/images/2016/react-native-redux-maoli.jpeg) <br/>
 如果不理解，多看两遍，下面会带着大家一起写个demo。
 
 
