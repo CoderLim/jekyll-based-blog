@@ -20,9 +20,11 @@ tags: react-native, redux
 > ReactNative也出了一年多了，facebook还在忙碌的修复各种问题，截止目前github上还有900个issue未解决。对于我而言对RN还是寄托了很大的期望，一
 > 方面是代码高度重用，再就是被javascript灵活性所吸引，希望以后可以不再有iOS和android，那么请叫我RN程序员。
 
-> 当ReactNative项目变大时state变得不可预测，不可预测的意思是到处修改和使用导致维护与debug很困难，所以就要有个管理state的*稻草*，
+> 随着ReactNative项目变大，state变得不可预测，不可预测的意思是到处修改和使用导致维护与debug很困难，所以就要有个管理state的*稻草*，
 > 这个救命*稻草*就是Redux。但注意一点Redux并不仅仅为ReactNative而生。
 > 声名：本文更适合有ReactNative基础的朋友。
+
+> 下面解释一些重要概念，然后解析一个demo。
 
 # Redux
 - - -
@@ -87,13 +89,23 @@ Redux由Action、Reducer、Storage三部分组成，先来看看官方代码（�
     // You can use subscribe() to update the UI in response to state changes.
     // Normally you'd use a view binding library (e.g. React Redux) rather than subscribe() directly.
     // However it can also be handy to persist the current state in the localStorage.
-    
+    /*
+     *
+     *  订阅：其参数是一个回调函数，当state改变时就会触发这个回调函数
+     *  订阅有个好处（如上英文注释），可以很方便的持久化当前state到localStorage（即将state保存到localStorage）
+     *
+     */
     store.subscribe(() =>
       console.log(store.getState())
     )
     
     // The only way to mutate the internal state is to dispatch an action.
     // The actions can be serialized, logged or stored and later replayed.
+    /*
+     *
+     * dispatch: 参数为action，store会将此action作为参数执行reducer（上面已经通过createStorage传入到store了）
+     *
+     */
     store.dispatch({ type: 'INCREMENT' })
     // 1
     store.dispatch({ type: 'INCREMENT' })
@@ -101,6 +113,10 @@ Redux由Action、Reducer、Storage三部分组成，先来看看官方代码（�
     store.dispatch({ type: 'DECREMENT' })
     // 1
 ```
-
+看完之后有的人这样：
+![image]({{ site.imageurl }}/assets/images/2016/react-native-redux-scronful1.png) <br/>
+还有的人这样：
+![image]({{ site.imageurl }}/assets/images/2016/react-native-redux-maoli.png) <br/>
+如果不理解，多看两边，下面会带着大家一起写个demo。
 
 
