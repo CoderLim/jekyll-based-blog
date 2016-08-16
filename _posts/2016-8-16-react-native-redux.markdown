@@ -10,8 +10,8 @@ tags: react-native, redux
 每天想像一件不可能发生的事：每个人都在家办公，都不再为金钱而工作
 
 # 碎碎念
-![image]({{ site.imageurl }}/assets/images/2016/wang-bao-qiang1) <br/>
-![image]({{ site.imageurl }}/assets/images/2016/wang-bao-qiang2) <br/>
+![image]({{ site.imageurl }}/assets/images/2016/wang-bao-qiang1.png) <br/>
+![image]({{ site.imageurl }}/assets/images/2016/wang-bao-qiang2.png) <br/>
 近日王宝强（本来是想用‘宝宝’来称呼，但是我为人高冷，还是用原名吧）的离婚闹得沸沸扬扬，热度是不是已经远远超过了里约奥运。无下限的网友各种恶搞，从‘潘金莲照顾武大郎’到‘宝宝捉奸’，只说一句：万能的网友捉奸视频有没有？刚看到王宝强的微博，只想说：唉，下贱的小娼妇，但是细想与我何干？毕竟我不知道谁是谁非，这里不做评判。
 
 # 导语
