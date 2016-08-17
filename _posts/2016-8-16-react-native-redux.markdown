@@ -6,9 +6,11 @@ category: ReactNative
 tags: react-native, redux
 ---
 
-# 乱想
+<br/>
+<br/>
+# 激发想象力
 - - -
-每天想像一件不可能发生的事：用两只脚走路的马撞到了墙
+用两只脚走路的马撞到了墙
 
 # 碎碎念
 ![image]({{ site.imageurl }}/assets/images/2016/wang-bao-qiang1.png) <br/>
