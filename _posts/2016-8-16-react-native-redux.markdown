@@ -191,6 +191,7 @@ Redux由Action、Reducer、Storage三部分组成，先来看看官方代码（�
 再往下看前，请打开你已经down下来的demo<br/>
 
 先来看看文件目录：
+
 ```
 -app
 ---actions
