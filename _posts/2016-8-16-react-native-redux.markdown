@@ -131,7 +131,8 @@ Redux由Action、Reducer、Storage三部分组成，先来看看官方代码（�
 > forward.
 > 有人问我这段字有什么含义，我说：没含义，放松一下😌
 
-# [Redux Thunk][4]
+# Redux Thunk
+[github地址在这里][4]
 **什么是thunk？** thunk是一个包含了表达式（expression）的函数，用来延迟表达式（expression）的执行。
 
 ```
@@ -186,7 +187,8 @@ Redux由Action、Reducer、Storage三部分组成，先来看看官方代码（�
         }
 ```
 
-# Demo: [ReactNativeReduxSimplest:不要吝啬你的star哦](https://github.com/CoderGLM/ReactNativeReduxSimplest)
+# ReactNativeReduxSimplest
+[进这里，点击右上角的star](https://github.com/CoderGLM/ReactNativeReduxSimplest)
 实现的功能是，页面上有两个按钮，点击按钮页面背景变色，第一个是变成红色，第二个是变成绿色<br/>
 再往下看前，请打开你已经down下来的demo<br/>
 
