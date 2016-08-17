@@ -125,7 +125,73 @@ Redux由Action、Reducer、Storage三部分组成，先来看看官方代码（�
 ![image]({{ site.imageurl }}/assets/images/2016/react-native-redux-maoli.jpeg) <br/>
 如果不理解，多看两遍，下面会带着大家一起写个demo。
 
+> 先来欣赏一段扎克伯格的文字
+> People often ask me what advice I'd give someone who wants to start their own company.
+> My answer is that every good company that I can think of started with someone caring about changing something, not someone deciding > to start a company. Instead of trying to build a company, focus on the change you want to see in the world and just keep pushing 
+> forward.
+> 有人问我这段字有什么含义，我说：没含义，放松一下😌
+
+# [Redux Thunk][4]
+**什么是thunk？** thunk是一个包含了表达式（expression）的函数，用来延迟表达式（expression）的执行。
+
+```
+        // 这里1+2是立即执行的
+        // calculation of 1 + 2 is immediate
+        // x === 3
+        let x = 1 + 2;
+        
+        // 这里1+2不会立即执行，只有在调foo时才会执行
+        // calculation of 1 + 2 is delayed
+        // foo can be called later to perform the calculation
+        // foo is a thunk!
+        let foo = () => 1 + 2;
+```
+
+现在一些框架的*readme*在写其用处时一般用**Motivation**这个词，动机纯不纯的动机。<br/><br/>
+**Redux Thunk middleware**允许你的action creator返回一个function而不是action。Thunk 可以用来延迟dispatch一个action，或者只有满足某个特定条件时才dispatch。inner function把store的dispatch和getState作为参数<br/>
+比如：
+
+```
+        // action creator 返回一个function去执行异步dispatch
+        const INCREMENT_COUNTER = 'INCREMENT_COUNTER';
+        
+        function increment() {
+          return {
+            type: INCREMENT_COUNTER
+          };
+        }
+        
+        function incrementAsync() {
+          return dispatch => {
+            setTimeout(() => {
+              // Yay! Can invoke sync or async actions with `dispatch`
+              dispatch(increment());
+            }, 1000);
+          };
+        }
+```
+
+```
+        // action creator返回一个function去有条件的执行dispatch
+        function incrementIfOdd() {
+          return (dispatch, getState) => {
+            const { counter } = getState();
+        
+            if (counter % 2 === 0) {
+              return;
+            }
+        
+            dispatch(increment());
+          };
+        }
+```
 
 
+# 参考
 
-
+> [1]: http://redux.js.org/ "redux 英文版本"
+> [2]: http://cn.redux.js.org/docs/basics/index.html "redux 中文版本"
+> [3]: http://stackoverflow.com/questions/29722270/import-modules-from-files-in-directory
+ "ES6能否import一个目录（多个文件）"
+> [4]: https://github.com/gaearon/redux-thunk "什么是Thunk？"
+> [5]: https://github.com/alinz/example-react-native-redux "example-react-native-redux，demo参考了这个项目"
