@@ -9,10 +9,8 @@ tags: react-native, redux
 <br/>
 <br/>
 
-# 激发想象力
-
-- - -
-用两只脚走路的马撞到了墙
+#激发想象力#
+用两只脚走路的马撞到了墙，然后...
 
 # 碎碎念
 ![image]({{ site.imageurl }}/assets/images/2016/wang-bao-qiang1.png) <br/>
