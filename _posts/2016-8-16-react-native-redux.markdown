@@ -213,6 +213,7 @@ Redux由Action、Reducer、Storage三部分组成，先来看看官方代码（�
 ```
 
 **actions/actionTypes.js**定义了两种类型：变成红色 和 变成绿色
+
 ```
         export const CHANGE2RED = 'CHANGE2RED';
         export const CHANGE2GREEN = 'CHANGE2GREEN';
@@ -220,6 +221,7 @@ Redux由Action、Reducer、Storage三部分组成，先来看看官方代码（�
 
 **actions/discolorActions.js**定义了两个action creator，如果你是从头看的，<br/>
 现在应该能看懂了，如果不懂，那就从头看吧
+
 ```
         import * as types from './actionTypes';
         
@@ -237,6 +239,7 @@ Redux由Action、Reducer、Storage三部分组成，先来看看官方代码（�
 ```
 
 **components/discolor.js**是RN的自定义控件
+
 ```
         import React, { Component } from 'react';
         import {
@@ -290,6 +293,7 @@ Redux由Action、Reducer、Storage三部分组成，先来看看官方代码（�
 ```
 
 **containers/discolorApp.js**：已经加入了必要的注释，不懂的留言吧
+
 ```
         'use strict' // javascript的严格模式
         
@@ -348,6 +352,7 @@ Redux由Action、Reducer、Storage三部分组成，先来看看官方代码（�
 ```
 
 **containers/app.js**
+
 ```
         import React, { Component } from 'react';
         import { createStore, applyMiddleware, combineReducers } from 'redux';
@@ -383,6 +388,7 @@ Redux由Action、Reducer、Storage三部分组成，先来看看官方代码（�
 ```
 
 **reducers/discolor.js**：
+
 ```
         /*
          *
@@ -415,7 +421,8 @@ Redux由Action、Reducer、Storage三部分组成，先来看看官方代码（�
 ```
 
 **reducers/index.js**：为了可以统一导出所有reducer，这里只有discolor<br/>
-如何统一导出，在*containers/app.js*中是这么用的： *import * as reducers from '../reducers'*;
+如何统一导出，在*containers/app.js*中是这么用的： *import * as reducers from '../reducers';*
+
 ```
         import discolor from './discolor';
         
@@ -425,6 +432,7 @@ Redux由Action、Reducer、Storage三部分组成，先来看看官方代码（�
 ```
 
 **index.ios.js**：代码与index.android.js相同
+
 ```
     'use strict' // javascript严格模式
     
@@ -436,13 +444,15 @@ Redux由Action、Reducer、Storage三部分组成，先来看看官方代码（�
 ```
 
 # 结语
+
 以上就是关于ReactNative结合Redux的入门教程，希望可以帮助大家理清思路。我本着用最简单的方式表达最重要的信息的目的来撰写此文，在有些措辞不严谨或者表达不够准确的地方希望大家可以留言。
 
 # 参考
-> [redux 英文版本](http://redux.js.org/)
-> [redux 中文版本](http://cn.redux.js.org/docs/basics/index.html)
-> [stackoverflow问题](http://stackoverflow.com/questions/29722270/import-modules-from-files-in-directory)：ES6能否import一个目录（多个文件）
-> [Redux Thunk](https://github.com/gaearon/redux-thunk): 什么是Thunk？
+
+> [redux 英文版本](http://redux.js.org/)<br/>
+> [redux 中文版本](http://cn.redux.js.org/docs/basics/index.html)<br/>
+> [stackoverflow问题](http://stackoverflow.com/questions/29722270/import-modules-from-files-in-directory)：ES6能否import一个目录（多个文件）<br/>
+> [Redux Thunk](https://github.com/gaearon/redux-thunk): 什么是Thunk？<br/>
 > [example-react-native-redux](https://github.com/alinz/example-react-native-redux) : demo参考了这个项目
 
 [1]: http://redux.js.org/ "redux 英文版本"
