@@ -25,7 +25,7 @@ tags: react-native, redux
 > 这种方式就是Redux。但注意一点Redux并不仅仅为ReactNative而生。
 > 声名：本文更适合有ReactNative基础的朋友。
 
-> 下面解释一些重要概念，然后解析一个demo。
+> 下面解释一些重要概念，然后解析一个[demo][6]。
 
 # Redux
 - - -
@@ -132,7 +132,8 @@ Redux由Action、Reducer、Storage三部分组成，先来看看官方代码（�
 > 有人问我这段字有什么含义，我说：没含义，放松一下😌
 
 # Redux Thunk
-[github地址在这里][4]
+
+[github地址在这里][4]<br/>
 **什么是thunk？** thunk是一个包含了表达式（expression）的函数，用来延迟表达式（expression）的执行。
 
 ```
@@ -147,9 +148,12 @@ Redux由Action、Reducer、Storage三部分组成，先来看看官方代码（�
         // foo is a thunk!
         let foo = () => 1 + 2;
 ```
-
-现在一些框架的*readme*在写其用处时一般用**Motivation**这个词，动机纯不纯的动机。<br/><br/>
-**Redux Thunk middleware**允许你的action creator返回一个function而不是action。Thunk 可以用来延迟dispatch一个action，或者只有满足某个特定条件时才dispatch。inner function把store的dispatch和getState作为参数<br/>
+现在一些框架的*readme*在写其用处时一般用**Motivation**这个词，动机纯不纯的动机。
+<br/>
+<br/>
+**Redux Thunk middleware**允许你的action creator返回一个function而不是action。<br/>
+Thunk 可以用来延迟dispatch一个action，或者只有满足某个特定条件时才dispatch。<br/>
+inner function把store的dispatch和getState作为参数<br/>
 比如：
 
 ```
@@ -452,8 +456,8 @@ Redux由Action、Reducer、Storage三部分组成，先来看看官方代码（�
 
 # 参考
 
-> [redux 英文版本](http://redux.js.org/)<br/>
-> [redux 中文版本](http://cn.redux.js.org/docs/basics/index.html)<br/>
+> [redux 英文版本](http://redux.js.org/)：如果你不喜欢请看参考2<br/>
+> [redux 中文版本](http://cn.redux.js.org/docs/basics/index.html)：翻译版，系统讲解<br/>
 > [stackoverflow问题](http://stackoverflow.com/questions/29722270/import-modules-from-files-in-directory)：ES6能否import一个目录（多个文件）<br/>
 > [Redux Thunk](https://github.com/gaearon/redux-thunk): 什么是Thunk？<br/>
 > [example-react-native-redux](https://github.com/alinz/example-react-native-redux) : demo参考了这个项目
@@ -464,3 +468,4 @@ Redux由Action、Reducer、Storage三部分组成，先来看看官方代码（�
  "ES6能否import一个目录（多个文件）"
 [4]: https://github.com/gaearon/redux-thunk "什么是Thunk？"
 [5]: https://github.com/alinz/example-react-native-redux "example-react-native-redux，demo参考了这个项目"
+[6]: https://github.com/CoderGLM/ReactNativeReduxSimplest "ReactNativeReduxSimplest"
