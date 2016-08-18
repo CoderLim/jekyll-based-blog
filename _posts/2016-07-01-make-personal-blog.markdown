@@ -7,7 +7,7 @@ tags: personal;blog;jekyll;个人博客
 ---
 
 
-![image]("{{site.imageurl}}/assets/images/2016/personal-blog-joke1.png")<br/>
+![image]({{site.imageurl}}/assets/images/2016/personal-blog-joke1.png)<br/>
 
 ## 导语
 
@@ -23,16 +23,16 @@ tags: personal;blog;jekyll;个人博客
 ### host gator
 
 刚开始是看到[The Ultimate Guide To Building A Personal Website][1]，很高兴，终于可以有自己的博客了<br/>
-![image]("{{site.imageurl}}/assets/images/2016/personal-blog-happy.png")<br/>
+![image]({{site.imageurl}}/assets/images/2016/personal-blog-happy.png)<br/>
 于是开始按照教程购买配置，什么？购买？没错，是需要花钱的，购买的网站就是口碑一向很好的hostgator，庆幸的是有优惠券，可以去百科找hostgator有可用的
 优惠券，购买域名和主机大概花了我400+软妹币。跟着教程走没问题，很简单。
 
-一切都搞定了，安装wordpress，漂亮，[我的网站]("http://gengliming.com")可以访问了。但是还要选择主题样式，很麻烦，选了主题还要找图片，唉～对于我这个
+一切都搞定了，安装wordpress，漂亮，[我的网站](http://gengliming.com)可以访问了。但是还要选择主题样式，很麻烦，选了主题还要找图片，唉～对于我这个
 app程序员来说还真费劲，如果可以直接修改源码可能对于我来说还容易点。
 
 就在我试了多个theme后，发现了jekyll主题，有多个主题都是我想要的，于是我就搜**如何把jekyll主题设置到wordpress**，发现了jekyll+github-pages打造自己
 的博客，居然写着免费不花钱，什么？不花钱？！<br/>
-![image]("{{site.imageurl}}/assets/images/2016/personal-blog-freak.png")<br/>
+![image]({{site.imageurl}}/assets/images/2016/personal-blog-freak.png)<br/>
 
 其实还是需要花钱买域名的，主机就不需要了，这样就剩了300+软妹币，还好hostgator支持40天退款，但是最终退款是退到你的hostgator账户的，如果想转出来好想
 还需要手续费，算了，放着吧，以后域名续费吧。
