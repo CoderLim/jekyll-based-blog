@@ -3,7 +3,7 @@ layout: post
 title: 如何在ReactNative中使用redux
 date: 2016.08.16 20:54.000000000 +09:00
 category: ReactNative 
-tags: react-native, redux
+tags: react-native;redux
 ---
 
 <br/>

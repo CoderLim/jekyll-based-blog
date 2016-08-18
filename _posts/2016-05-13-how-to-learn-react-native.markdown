@@ -2,7 +2,8 @@
 layout: post
 title: react-native入门
 date: 2016-01-13 23:32:54.000000000 +09:00
-tags: ReactNative
+category: ReactNative
+tags: react-native;入门;学习;
 ---
 
 >此博客将记录我（ios程序员）学习RN很有价值的内容，代码学习可以参考[ReactNativeLeaning(ES6版)](https://github.com/CoderGLM/ReactNativeLeaning)，最后附了一个sinaWebBo项目，希望大家不吝赐个star。
