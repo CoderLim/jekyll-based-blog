@@ -1,3 +1,11 @@
+---
+layout: post
+title: 如何制作个人博客
+date: 2016-07-1 21:00:00.000000000 +09:00
+category: other
+tags: personal;blog;jekyll;个人博客
+---
+
 
 ![image]("{{site.imageurl}}/assets/images/2016/personal-blog-joke1.png")<br/>
 
@@ -49,7 +57,6 @@ app程序员来说还真费劲，如果可以直接修改源码可能对于我�
 ### 添加评论分享模块
 
 起初试了一下disqus，但是国内访问速度也是够了，有时压根就出不来，于是选择了[jiaThis][11]。进入jiaThis官网首页获取代码是关于**分享**的，如果需要就按教程来。
-
 **评论**是[友言][12]提供的，好像友言被jiaThis收购了，所以在[jiaThis][11]有[友言][12]的入口。
 
 关于评论和分享没什么可注意的，都是“获取代码”粘贴到你的源码相应位置就行了。
@@ -65,9 +72,8 @@ app程序员来说还真费劲，如果可以直接修改源码可能对于我�
 * 先购买域名，我的是hostgator的花了60左右rmb；
 * [配置DNS的A record](https://help.github.com/articles/setting-up-an-apex-domain/#configuring-a-records-with-your-dns-provider), 配置好后下面有个dig的测试语句，
   测试没问题就没问题了；
-* [设置你的github项目的域名](https://help.github.com/articles/adding-or-removing-a-custom-domain-for-your-github-pages-site/)
-修改Name Server或者Manage DNS后要等最多48小时后才能访问你的域名。
-
+* [设置你的github项目的域名](https://help.github.com/articles/adding-or-removing-a-custom-domain-for-your-github-pages-site/)<br/>
+修改Name Server或者Manage DNS后要等最多48小时后才能访问你的域名
  
 ## 结语
 
@@ -77,9 +83,9 @@ app程序员来说还真费劲，如果可以直接修改源码可能对于我�
 
 ## 参考
 
-1.[Jekyll使用篇 1 - 发布文章、加入评论功能、加入Google Analytics](http://www.jianshu.com/p/ffbbed22f984) : 内容如标题
-2.[jekyll 官网](http://jekyll.bootcss.com/)：按步骤来
-3.[google 统计](https://www.google.com/analytics/): 加入浏览量，新用户等统计
+1.[Jekyll使用篇 1 - 发布文章、加入评论功能、加入Google Analytics](http://www.jianshu.com/p/ffbbed22f984) : 内容如标题<br/>
+2.[jekyll 官网](http://jekyll.bootcss.com/)：按步骤来 <br/>
+3.[google 统计](https://www.google.com/analytics/): 加入浏览量，新用户等统计 <br/>
 
 
 [1]: http://collegeinfogeek.com/personal-website/ "hostgator tutorial"
