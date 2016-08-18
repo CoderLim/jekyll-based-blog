@@ -3,7 +3,8 @@ layout: post
 title: 如何在ReactNative中使用redux
 date: 2016.08.16 20:54.000000000 +09:00
 category: ReactNative 
-tags: react-native;redux
+description: ReactNative也出了一年多了，facebook还在忙碌的修复各种问题，截止目前github上还有900个issue未解决。对于我而言对RN还是寄托了很大的期望，一方面是代码高度重用，再就是被javascript灵活性所吸引，希望以后可以不再有iOS和android，那么请叫我RN程序员。ReactNative是基于状态的组件化框架，随着RN(ReactNative)项目变大，state变得不可预测，不可预测的意思是state到处修改和使用导致维护与debug很困难，所以就要有个管理state的方式，这种方式就是Redux。但注意一点Redux并不仅仅为ReactNative而生。
+tags: react-native;ReactNative;redux
 ---
 
 <br/>
