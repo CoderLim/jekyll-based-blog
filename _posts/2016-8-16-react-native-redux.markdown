@@ -222,6 +222,13 @@ inner function把store的dispatch和getState作为参数<br/>
 -index.android.js
 ```
 
+**安装依赖**此处为必要的安装，如果缺少，会有red screen提示的
+
+```
+    npm install --save redux
+    npm install --save react-redux
+```
+
 **actions/actionTypes.js**定义了两种类型：变成红色 和 变成绿色
 
 ```
