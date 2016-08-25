@@ -479,4 +479,4 @@ inner function把store的dispatch和getState作为参数<br/>
  "ES6能否import一个目录（多个文件）"
 [4]: https://github.com/gaearon/redux-thunk "什么是Thunk？"
 [5]: https://github.com/alinz/example-react-native-redux "example-react-native-redux，demo参考了这个项目"
-[6]: https://github.com/CoderGLM/ReactNativeReduxSimplest "ReactNativeReduxSimplest"
+[6]: https://github.com/CoderGLM/react-native-redux-example/tree/master/Discolor "Discolor"
