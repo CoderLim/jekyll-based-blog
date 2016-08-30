@@ -5,7 +5,7 @@ layout: default
 <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <div class="post-meta">
-      <time datetime="{{page.date | date: date_to_xmlschema}}" itemprop="datePublished" class="post-meta__date date">{{page.date | date: "%F"}}</time> &#8226; <span class="post-meta__tags tags">{{page.tags}}</span>
+      <time datetime="{{page.date | date: date_to_xmlschema}}" itemprop="datePublished" class="post-meta__date date">{{page.date | date: "%F"}}</time> &#8226; <span class="post-meta__tags tags">{{page.category}}</span>
     </div>
     <h1 class="post-title">{{ page.title }}</h1>
   </header>
@@ -14,18 +14,6 @@ layout: default
     {{ content }}
   </section>
 </article>
-
-<!-- UY BEGIN -->
-<div id="uyan_frame"></div>
-<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2110666"></script>
-<!-- UY END -->
-
-<!-- JiaThis Button BEGIN -->
-<script type="text/javascript">
-var jiathis_config = {data_track_clickback:'true'};
-</script>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?move=0&amp;uid=2110666" charset="utf-8"></script>
-<!-- JiaThis Button END -->
 
 <!-- 这里是广告 -->
 <!--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

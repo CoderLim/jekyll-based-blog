@@ -1,6 +1,6 @@
 # jekyll-based-blog
 > This is a blog based Jekyll and Github-pages;
-> If you want to make a personal blog, Jekyll can be a good choice. Here is the tutorial: [jekyll](https://jekyllrb.com/);
+> If you want to make a personal blog, Jekyll can be a good choice. Here is the tutorial: [How to make personal blog](http://gengliming.com/2016/07/make-personal-blog/);
 > Before you make a personal blog, you can have a glance to [my new blog](http://gengliming.com).
 
 # ScreenShots

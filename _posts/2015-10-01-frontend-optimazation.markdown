@@ -2,10 +2,13 @@
 layout: post
 title: 前端性能优化
 date: 2015.10.01 15:32.000000000 +09:00
-tags: 前端相关
+category: 前端相关
+description: 性能对于程序来说至关重要。本文是对雅虎军规的翻译。前段性能优化从Content、Server、Cookie、CSS、Javascript、Images、Mobile几方面总结。
+tags: 前端;性能优化
 ---
 
 #### 导语:
+
 >性能对于程序来说至关重要。本文主要内容是对[文章]()的翻译，再加上平常碰到的优化Tip，从Content、Server、Cookie、CSS、Javascript、Images、Mobile几方面总结。
 
 >文中翻译的是需要解释的tip，所以有些看小标题就知道如何优化的我就不翻译了，如果这些未翻译的tip有需要的朋友可以给我留言。
@@ -27,8 +30,6 @@ tags: 前端相关
 - CSS Sprites：这是一种比较好的方法。合并你的背景图片，并且使用css的background-image和background-position属性展示需要的图片部分。
 - 图片映射：不推荐，想了解[猛戳这里](https://www.w3.org/TR/html401/struct/objects.html#h-13.6)；
 - 行内图片：使用[data:URL scheme](http://tools.ietf.org/html/rfc2397)把图片数据嵌入到实际页面。这种方式还没被所有主流浏览器支持。
-
-
 
 #### 2、减少DNS查询
 
