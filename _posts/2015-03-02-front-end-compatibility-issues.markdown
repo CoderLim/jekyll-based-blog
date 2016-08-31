@@ -37,10 +37,10 @@ tags: 前端;兼容;
 
 ```
        .fontsize2 {
-			/*-webkit-text-size-adjust: none;*/
-			font-size: 9px;
-			-webkit-transform: scale(0.75);// 12 * 0.75 = 9
-		}
+	    /*-webkit-text-size-adjust: none;*/
+	    font-size: 9px;
+	    -webkit-transform: scale(0.75);// 12 * 0.75 = 9
+	}
 ```  
 
 - 超链接访问后hover样式就不现实了，被点击访问后的超链接不再具有hover和active；按照L-V-H-A：a:link{} a:visited{} a:hover{} a:active{} 顺序设置可解决；
@@ -61,16 +61,16 @@ tags: 前端;兼容;
 ```
 // 在IE下div.child是居中现实的，但是在firefox和chrome下是left
        .container {
-			text-align: center;
-		}
+	    text-align: center;
+	}
 ```
 
 ```
         <div class="container">
-			<div class="child">
-				child's content
-			</div>
+		<div class="child">
+			child's content
 		</div>
+	</div>
 ```    
 
 解决方案如下：
@@ -78,20 +78,20 @@ tags: 前端;兼容;
 ```
 // 方法一：
        .container {
-			text-align: center;
-			text-align: -webkit-center;
-			text-align: -moz-center;
-		}
+		text-align: center;
+		text-align: -webkit-center;
+		text-align: -moz-center;
+	}
 ```
 
 ```
 方法二：
        .container {
-			text-align: center;
-		}
-		.container .child {
-			margin: auto;
-		}
+	    text-align: center;
+	}
+	.container .child {
+	    margin: auto;
+	}
 ```
 
 - 不能自动展开包含框：触发Layout来解决
@@ -100,6 +100,7 @@ overflow:hidden与height不能同时设置（同时设置height的值就回对�
 来触法haslayout
 
 - 列表布局问题
+- 
 ```
 	<style>
 	    ul {
