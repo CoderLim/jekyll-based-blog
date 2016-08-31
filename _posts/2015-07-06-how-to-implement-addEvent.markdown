@@ -86,7 +86,7 @@ function handleEvent(event) {
 }
 ```
 
-这样的好处是什么呢？
+### 这样的好处是什么呢？
 
 1. 没有对象检测；
 2. 没有使用addeventListener/attachEvent；
