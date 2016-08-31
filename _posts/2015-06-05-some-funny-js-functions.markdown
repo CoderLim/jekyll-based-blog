@@ -130,6 +130,6 @@ console.log(sum(1, 10000));
 
 ## 参考
 
-> [JS魔法堂：函数节流（throttle）与函数去抖（debounce）](http://www.cnblogs.com/fsjohnhuang/p/4147810.html)：这里貌似比我说的更形象
-> [Understanding recursion in functional JavaScript programming](http://www.integralist.co.uk/posts/js-recursion.html)：简单看了看代码，主要内容还是看的中文版的（在下面）;
+> [JS魔法堂：函数节流（throttle）与函数去抖（debounce）](http://www.cnblogs.com/fsjohnhuang/p/4147810.html)：这里貌似比我说的更形象<br/>
+> [Understanding recursion in functional JavaScript programming](http://www.integralist.co.uk/posts/js-recursion.html)：简单看了看代码，主要内容还是看的中文版的（在下面）;<br/>
 > [函数的扩展](http://es6.ruanyifeng.com/#docs/function)：这是es6教程中的其中一课，往下拉往下拉然后就看到“尾递归”了， 如果嫌麻烦，那就点上面的锚点.
