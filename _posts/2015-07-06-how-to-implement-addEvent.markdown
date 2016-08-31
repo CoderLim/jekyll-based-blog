@@ -29,12 +29,13 @@ function addEvent(obj, type, fn, useCapture) {
 
 ### 优势：
 
-- 1. 没有限制的程序处理，可以添加任意多个；
-- 2. 避免ie的内存问题：有一个中央函数来来设置事件处理程序，这种方法允许你对所有的事件处理程序保存在数组或对象中，这样在unload方法中就可以移除事件处理器与dom元素的绑定。
+1. 没有限制的程序处理，可以添加任意多个；
+2. 避免ie的内存问题：有一个中央函数来来设置事件处理程序，这种方法允许你对所有的事件处理程序保存在数组或对象中，这样在unload方法中就可以移除事件处理器与dom元素的绑定。
 
 ### 当然也是有问题的：
-- 1. addEventListener和attachEvent的区别：[猛戳这里-The this keyword](http://www.quirksmode.org/js/this.html)；
-- 2. 类似foldout菜单，每个li中有个a标签，当mouseover和mouseout的时候修改li的class。那我在handler中怎么拿到li呢？既然this在[The this keyword](http://www.quirksmode.org/js/this.html)提到是有问题的，那用event.target来获取li从而修改class呢？很可惜，li被a盖住了，所以target获取到的是a。
+
+1. addEventListener和attachEvent的区别：[猛戳这里-The this keyword](http://www.quirksmode.org/js/this.html)；
+2. 类似foldout菜单，每个li中有个a标签，当mouseover和mouseout的时候修改li的class。那我在handler中怎么拿到li呢？既然this在[The this keyword](http://www.quirksmode.org/js/this.html)提到是有问题的，那用event.target来获取li从而修改class呢？很可惜，li被a盖住了，所以target获取到的是a。
 
 
 
@@ -86,12 +87,12 @@ function handleEvent(event) {
 ```
 
 这样的好处是什么呢？
-- 1、没有对象检测；
-- 2、没有使用addeventListener/attachEvent；
-- 3、保证了正确的作用域（指this关键字）；
-- 4、正确的传递了event对象；
-- 5、完全的跨浏览器（ie4或ns4可能也能正常使用）；
-- 6、 并且让我说的话，它是没有内存泄漏的。
+1. 没有对象检测；
+2. 没有使用addeventListener/attachEvent；
+3. 保证了正确的作用域（指this关键字）；
+4. 正确的传递了event对象；
+5. 完全的跨浏览器（ie4或ns4可能也能正常使用）；
+6.  并且让我说的话，它是没有内存泄漏的。
 
 ## 参考
  
