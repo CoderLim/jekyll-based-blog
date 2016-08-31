@@ -112,7 +112,7 @@ overflow:hidden与height不能同时设置（同时设置height的值就回对�
 	   <li>li2</li>
 	   <li>li3</li>
 	</ul>
- ```
+```
  
 定义列表宽度为60%，那么ul元素就拥有了layout特性，如果在ie浏览，会发现列表的项目符号
 消失了。
