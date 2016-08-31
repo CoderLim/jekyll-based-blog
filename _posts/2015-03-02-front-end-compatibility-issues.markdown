@@ -12,7 +12,7 @@ tags: 前端;兼容;
 
 ## CSS
 
-- [[CSS hack大全&详解（什么是CSS hack）](http://www.kwstu.com/Admin/ViewArticle/201409011604277330)](http://www.kwstu.com/Admin/ViewArticle/201409011604277330)
+- [CSS hack大全&详解（什么是CSS hack）](http://www.kwstu.com/Admin/ViewArticle/201409011604277330)](http://www.kwstu.com/Admin/ViewArticle/201409011604277330)
 
 ```
 // 区分所有主流浏览器的hack：
