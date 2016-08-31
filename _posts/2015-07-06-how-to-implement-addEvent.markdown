@@ -87,6 +87,7 @@ function handleEvent(event) {
 ```
 
 这样的好处是什么呢？
+
 1. 没有对象检测；
 2. 没有使用addeventListener/attachEvent；
 3. 保证了正确的作用域（指this关键字）；
