@@ -1,3 +1,12 @@
+---
+layout: post
+title: 如何正确实现addEvent
+date: 2015.07.06 15:32.000000000 +09:00
+category: 前端相关
+description: 如何正确实现addEvent？
+tags: 前端;addEvent;
+---
+
 > 如何正确实现addEvent？
 
 ## 分析一下传统addEvent的实现：
