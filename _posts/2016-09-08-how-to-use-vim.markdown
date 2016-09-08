@@ -8,8 +8,9 @@ tags: exvim;vim;使用;方法;终极;总结;入门;
 ---
 
 > 是时候总结一下vim的使用方法了，一方面防止自己忘记不常用的指令，另一方面给大家提供一个参考。
+> 等有时间再把文中的链接内容展开介绍。
 
-[vim键盘图]({{site.imageurl}}/assets/images/2016/how-to-use-vim1.png)
+![vim键盘图]({{site.imageurl}}/assets/images/2016/how-to-use-vim1.png)
 
 ## vim的安装
 
@@ -17,7 +18,7 @@ tags: exvim;vim;使用;方法;终极;总结;入门;
 
 ## vim指令入门
 
-[Vim入门教程](http://blog.jobbole.com/86132/)这篇文件是我**跪着**强烈推荐的，入门必备，告诉你如何使用指令，
+[Vim入门教程](http://blog.jobbole.com/86132/)这篇文件是我**强烈推荐**的，入门必备，告诉你如何使用指令，
 如何**人类的语言**来使用指令。
 
 ## 高频组合指令
