@@ -228,4 +228,5 @@ webpack-dev-server --progress --colors
 
 ## 参考
 
-[webpack-getting-started](https://webpack.github.io/docs/tutorials/getting-started/)
+[webpack-getting-started](https://webpack.github.io/docs/tutorials/getting-started/)：真正的入门教程
+[WebpackTutorial](https://github.com/AriaFallah/WebpackTutorial/tree/master/part1)：更多入门教程
