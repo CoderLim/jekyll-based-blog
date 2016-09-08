@@ -186,6 +186,46 @@ chunk    {0} bundle.js (main) 8.86 kB [rendered]
 ```
 > webpack命令将会在当前目录下加载**webpack.config.js**
 
+## 更好看的输出
+
+如果项目变大，编译就有可能会久。因此我们想展示进度条。并且我们希望是彩色的...
+
+我们可以这么做：
+
+```
+webpack --progress --colors
+```
+
+## watch模式
+
+我们不想每次修改都要手动重新编译，可以这样做：
+
+```
+webpack --progress --colors --watch
+```
+
+webpack可以缓存未修改的模块和输出文件。
+
+> 当使用watch模式时，webpack向所有文件安装watcher。如果有变化被探测到，它就会重新编译。当缓存可用时，webpack保存每个模块
+> 到内存中，如果模块没有改变就会重用。
+
+## development server
+
+development server更好些。
+
+```
+npm install webpack-dev-server -g
+```
+
+```
+webpack-dev-server --progress --colors
+```
+
+这个是在localhost:8080上绑定了一小的express服务，服务于你的静态资源和bundle（自动被编译的）。
+它将会在bundle被编译(SockJS)后自动更新浏览器页面。在你的浏览器中打开[http://localhost:8080/webpack-dev-server/bundle]()。
+
+> dev server使用的就是webpack的watch模式。它阻止webpack把结果文件放到磁盘上，而它是从内存中提供和保存结果文件的。
+
 ## 参考
 
 [webpack-getting-started](https://webpack.github.io/docs/tutorials/getting-started/)
