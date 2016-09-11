@@ -9,6 +9,7 @@ tags: 前端;javascript;this;
 
 > 通过绑定规则来确定this的绑定对象。
 
+
 ## 默认绑定
 
 默认绑定规则看作是无法应用其他规则时的规则，
@@ -384,3 +385,8 @@ var baz = new bar( "p2" );
 
 baz.val; // p1p2
 ```
+
+
+## 参考
+
+[你不懂的javascript(上卷)]()
