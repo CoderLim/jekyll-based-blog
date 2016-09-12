@@ -135,6 +135,10 @@ value has been propagated to the viewport)都会为内容创建一个BFC。
 
 ## 9.10 文字方向：direction和unicode-bidi属性
 
+## 结语
+
+终于可以写结尾了，重点是VFM、BFC、各种盒子，后续内容抽空再写，歇会儿。
+
 ## 参考
 
 > [W3C-Visual formatting model 9](https://www.w3.org/TR/CSS2/visuren.html#visual-model-intro)
