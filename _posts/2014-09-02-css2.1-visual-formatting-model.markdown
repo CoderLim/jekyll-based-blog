@@ -18,10 +18,10 @@ tags: 前端;类;VFM;CSS2.1;
 
 在VFM中，每个在文档树中的元素参照[盒子模型](https://www.w3.org/TR/CSS2/box.html)生成0个或多个盒子。这些盒子的布局由以下几方面掌控：
 
-- [盒子的尺寸](https://www.w3.org/TR/CSS2/box.html#box-dimensions)和[类型](https://www.w3.org/TR/CSS2/visuren.html#box-gen)
-- [位置方案](https://www.w3.org/TR/CSS2/visuren.html#positioning-scheme)（普通流、float和绝对定位）
-- 元素在文档树中的关系；
-- 外部信息（比如viewport的尺寸、图片等实际尺寸等）
+* [盒子的尺寸](https://www.w3.org/TR/CSS2/box.html#box-dimensions)和[类型](https://www.w3.org/TR/CSS2/visuren.html#box-gen)
+* [位置方案](https://www.w3.org/TR/CSS2/visuren.html#positioning-scheme)（普通流、float和绝对定位）
+* 元素在文档树中的关系；
+* 外部信息（比如viewport的尺寸、图片等实际尺寸等）
 
 这章和接下来定义的属性适用于[continuous media](https://www.w3.org/TR/CSS2/media.html#continuous-media-group)和[paged media](https://www.w3.org/TR/CSS2/media.html#paged-media-group)。然而，margin属性当被用于paged media是有不同的意思（详情参考[page model](https://www.w3.org/TR/CSS2/page.html#page-margins)）。
 
