@@ -10,6 +10,13 @@ tags: exvim;vim;使用;方法;终极;总结;入门;
 > 是时候总结一下vim的使用方法了，一方面防止自己忘记不常用的指令，另一方面给大家提供一个参考。
 > 等有时间再把文中的链接内容展开介绍。
 
+## 先来看看我的vim
+
+![我的vim]({{site.imageurl}}/assets/images/2016/how-to-use-vim-my-vim.png)
+
+
+## vim键盘图
+
 ![vim键盘图]({{site.imageurl}}/assets/images/2016/how-to-use-vim1.png)
 
 ## vim的安装
