@@ -1,0 +1,139 @@
+---
+layout: post
+title: Visual Formatting Model
+date: 2014.09.02 12:30.000000000 +09:00
+category: 前端相关
+description: 本文主要针对ES5如何创建类和实现类的继承做了一个总结
+tags: 前端;类;OO;ES5;
+---
+
+## Preamble
+
+> 虽说CSS学习来成本不高，但是内部机制还是要了解了解。如果你心(yan)思(jing)细(bu)腻(xia)会发现博客里有些只有标题，有两个原因：1、
+> 内容是对标题的`简单`阐述；2、自己理解不到位，以后都理解了再添加内容。
+
+## 9.1 节点节点介绍可视化格式化模型(Visual Formatting Model)
+
+这章和接下来描述了可视化格式化模型（VFM）：用户代理如何在[可视媒体](https://www.w3.org/TR/CSS2/media.html)上处理[文档树](https://www.w3.org/TR/CSS2/conform.html#doctree).
+
+在VFM中，每个在文档树中的元素参照[盒子模型](https://www.w3.org/TR/CSS2/box.html)生成0个或多个盒子。这些盒子的布局由以下几方面掌控：
+- [盒子的尺寸](https://www.w3.org/TR/CSS2/box.html#box-dimensions)和[类型](https://www.w3.org/TR/CSS2/visuren.html#box-gen)
+- [位置方案](https://www.w3.org/TR/CSS2/visuren.html#positioning-scheme)（普通流、float和绝对定位）
+- 元素在文档树中的关系；
+- 外部信息（比如viewport的尺寸、图片等实际尺寸等）
+
+这章和接下来定义的属性适用于[continuous media](https://www.w3.org/TR/CSS2/media.html#continuous-media-group)和[paged media](https://www.w3.org/TR/CSS2/media.html#paged-media-group)。然而，margin属性当被用于paged media是有不同的意思（详情参考[page model](https://www.w3.org/TR/CSS2/page.html#page-margins)）。
+
+VFM没有指定格式化的所有方面（比如letter－spacing的算法）。遵循用户代理有可能会对于此说明没有提到的格式化问题有不同的表现。
+
+### 9.1.1 视窗(Viewport)
+
+...
+
+### 9.1.2 包含块(Containing Blocks)
+
+在CSS2.1中，很多盒子位置和尺寸的计算是对于(respect to)长方形盒子（包含块）的边缘计算的。通常生成的盒子作为后代盒子的包含块。
+常说的“一个盒子的包含块”意思是“这个盒子存在于的包含块”，而不是它生成的。
+
+每个盒子都对于它的包含块提供一个位置，但是它不会被它的包含块限制（confine），它有可能会溢出（overflow）。
+
+在[下章](https://www.w3.org/TR/CSS2/visudet.html)会告诉你包含块的尺寸如何计算的[详细信息](https://www.w3.org/TR/CSS2/visudet.html#containing-block-details)。
+
+## 9.2 控制盒子的生成(Controlling Box Generation)
+
+接下来的一节描述了CSS2.1中可能会生成的盒子类型。盒子类型在某种程度上（in part）会影响它在VFM中的表现。
+在下面描述的display属性置顶了盒子类型。
+
+### 9.2.1 块级元素(Block-level Elements)和块盒子(Block Boxes)
+
+块级元素是在原文档中显示格式化为block的元素（比如段落）。display属性值为'block','list-item'和'table'可以让元素称为块级元素。
+
+块级盒子是参与到[块级上下文](https://www.w3.org/TR/CSS2/visuren.html#block-formatting)的盒子。
+每个块级元素都会产生一个主(principal)块级盒子来包含后代盒子并生成内容，而且它也参与(involve in)了任何定位方案。
+一些块级元素有可能会产生除了（in addition to）主块级盒子外的其它盒子：如'list-item'元素。这些额外(additional)的盒子会针对主盒子被放置。
+
+除了table盒子（后续章节会提到）和替换元素，块级盒子也是块容器盒子(block container box)。
+
+#### 9.2.1.1 匿名块盒子
+
+...
+
+### 9.2.2 行内级元素(Inline-level Elements)和行内盒子(Inline boxes)
+
+行内级元素（inline-level elements）是在源文档中不会形成内容的新block的元素；这些内容是分散到多个行中
+（比如，段落中强调的文本，行内image等).下面这些display的值会产生行内级元素：'inline','inline-table'和'inline-block'.
+行内级元素会产生参与行内格式化上下文（IFC，inline formatting context）的行内级盒子(inline-level box)。
+
+行内盒子(inline box)是行内级盒子，并且它的内容是参与它包含的IFC。display为inline的非替换元素产生一个行内盒子。不是行盒子的
+行内级盒子（比如行内级替换元素，行内块元素和行内table元素）被称为原子行内级盒子（atomic inline-level box）,因为他们作为一个
+不透明的盒子参与他们的IFC中。
+
+#### 9.2.2.1 匿名行内盒子
+
+## 9.3 定位方案(Positioning Schemes)
+
+...
+
+### 9.3.1 选择一个定位方案：position属性
+
+... 
+
+### 9.3.2 盒子偏移: top, right, bottom, left
+
+...
+
+## 9.4 普通流(Normal flow)
+
+### 9.4.1 块格式化上下文(Block Formatting Contexts)
+
+浮动、绝对定位元素，不是块盒子的块容器（比如inline-blocks、table-cells和table-captions)和overflow不是visible的块盒子（except when that
+value has been propagated to the viewport)都会为内容创建一个BFC。
+在BFC中，盒子是从BFC的顶部开始，竖直方向，一个一个放置的。两个兄弟盒子的竖直间距是有margin决定的。
+同一BFC中相邻块级盒子的竖直margin会发生[折叠](https://www.w3.org/TR/CSS2/box.html#collapsing-margins)。
+
+在BFC中，每个盒子的左外边接触包含块的左边（对于从右到左的格式化，接触右边）。这个是正确的即使是对于float的展现（尽管一个盒子的杭盒子可能由于浮动而皱缩）
+，除非盒子创建一个新的BFC（在这种情况下，盒子自身可能会因为浮动[变得更狭窄](https://www.w3.org/TR/CSS2/visuren.html#bfc-next-to-float)）。
+
+### 9.4.2 行内格式化上下文(Inline formatting Contexts)
+
+在IFC中，盒子是从包含块的顶部水平地一个接一个放置的。水平方向的margin、border和padding是有效的。
+这些赫宰在竖直方向可能会有不同的方式排列：它们的顶部或底部，也可能是它们中的文本的基线。
+包含这些盒子的长方形区域（最终形成一条线）叫做行盒子（line box）
+
+### 9.4.3 相对定位(Relative Positioning)
+
+## 9.5 浮动(Floats)
+
+### 9.5.1 定位浮动(Positioning The Float)：float属性
+ 
+... 
+
+### 9.5.2 控制浮动旁边的流：clear属性
+
+...
+
+## 9.6 绝对定位(Absolute Positioning)
+
+### 9.6.1 固定定位(Fixed Positioning)
+
+## 9.7 display、position和float的关系
+
+## 9.8 普通流、浮动和绝对定位的比较
+
+### 9.8.1 普通流(Normal Flow)
+
+### 9.8.2 相对定位(Relative Positioning)
+
+### 9.8.3 浮动一个盒子
+
+### 9.8.4 绝对定位
+
+## 9.9 分层展示(Layered Presentation)
+
+### 9.9.1 指定栈级别：z-index属性
+
+## 9.10 文字方向：direction和unicode-bidi属性
+
+## Reference
+
+> [W3C-Visual formatting model 9](https://www.w3.org/TR/CSS2/visuren.html#visual-model-intro)
