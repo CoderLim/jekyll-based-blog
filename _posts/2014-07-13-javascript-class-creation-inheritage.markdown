@@ -1,7 +1,7 @@
 ---
 layout: post
 title: javascript 类的创建与继承
-date: 2015.01.20 15:32.000000000 +09:00
+date: 2014.07.13 12:30.000000000 +09:00
 category: 前端相关
 description: 本文主要针对ES5如何创建类和实现类的继承做了一个总结
 tags: 前端;类;OO;ES5;
