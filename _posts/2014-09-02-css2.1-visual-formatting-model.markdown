@@ -3,8 +3,8 @@ layout: post
 title: Visual Formatting Model
 date: 2014.09.02 12:30.000000000 +09:00
 category: 前端相关
-description: 本文主要针对ES5如何创建类和实现类的继承做了一个总结
-tags: 前端;类;OO;ES5;
+description: CSS2.1说明的翻译，讲述了VFM（Visual Formatting Model），盒子模型，包含块，BFC，IFC，定位等
+tags: 前端;类;VFM;CSS2.1;
 ---
 
 ## Preamble
@@ -17,6 +17,7 @@ tags: 前端;类;OO;ES5;
 这章和接下来描述了可视化格式化模型（VFM）：用户代理如何在[可视媒体](https://www.w3.org/TR/CSS2/media.html)上处理[文档树](https://www.w3.org/TR/CSS2/conform.html#doctree).
 
 在VFM中，每个在文档树中的元素参照[盒子模型](https://www.w3.org/TR/CSS2/box.html)生成0个或多个盒子。这些盒子的布局由以下几方面掌控：
+
 - [盒子的尺寸](https://www.w3.org/TR/CSS2/box.html#box-dimensions)和[类型](https://www.w3.org/TR/CSS2/visuren.html#box-gen)
 - [位置方案](https://www.w3.org/TR/CSS2/visuren.html#positioning-scheme)（普通流、float和绝对定位）
 - 元素在文档树中的关系；
