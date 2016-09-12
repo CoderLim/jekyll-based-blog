@@ -7,9 +7,13 @@ description: webpack的使用方法
 tags: 前端;webpack;入门;
 ---
 
-## WELCOME
 
-通过这个教程你会了解到：<br/>
+## 前言
+
+在此之前看了一下gulp相关教程，这里有个一还不错：[Gulp for Beginners](https://css-tricks.com/gulp-for-beginners/)，
+推荐给大家看看。
+
+通过本教程你会了解到：<br/>
 
 * 如何安装**webpack**;
 * 如何使用**webpack**;
