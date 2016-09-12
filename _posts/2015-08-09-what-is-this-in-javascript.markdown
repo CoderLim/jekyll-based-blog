@@ -1,7 +1,7 @@
 ---
 layout: post
 title: this绑定的对象到底指的是哪个？
-date: 2015.01.20 09:30.000000000 +09:00
+date: 2015.08.09 09:30.000000000 +09:00
 category: 前端相关
 description: 全面解析this关键字，什么是this？ this绑定的对象到底指的是哪个？
 tags: 前端;javascript;this;
