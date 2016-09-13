@@ -8,6 +8,8 @@ tags: 前端;javascript;;
 ---
 
 
+![image]({{ site.imageurl }}/assets/images/2016/difference-es5-es6-in-react.png)
+
 ## 前言
 
 > 在github上有很多框架都是用的ES5，对于接触ES5比较多的人，如果想写ES6语法还是要有个参考，
