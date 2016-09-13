@@ -8,10 +8,12 @@ tags: 前端;javascript;;
 ---
 
 
-![image]({{ site.imageurl }}/assets/images/2016/difference-es5-es6-in-react.png)
+![image]({{ site.imageurl }}/assets/images/2016/difference-es5-es6-in-react.png) <br/>
+爬山，满天星，帐篷，心如止水。
 
 ## 前言
 
+> 
 > 在github上有很多框架都是用的ES5，对于接触ES5比较多的人，如果想写ES6语法还是要有个参考，
 > 这里用ES5/ES6实现了两段功能完全相同的代码，但是不保证可以正常运行，主要是把区别表现出来。
 
@@ -110,3 +112,13 @@ export default class MyComponent extends React.Component {
 }
 
 ```
+
+## 结语
+
+本文文字不多，主要还是代码，因为我认为代码已经完全能表达ES5/6的区别。上面提到的是React/ReactNative中ES5/6的区别，
+如果你想了解更多ES6的新语法新特性，请参考阮一峰的[ECMAScript 6入门](http://es6.ruanyifeng.com/)。
+
+## 参考
+
+[React/React Native 的ES5 ES6写法对照表](https://segmentfault.com/n/1330000004266763)<br/>
+[ECMAScript 6入门](http://es6.ruanyifeng.com/)
