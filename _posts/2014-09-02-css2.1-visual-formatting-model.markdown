@@ -117,7 +117,24 @@ value has been propagated to the viewport)都会为内容创建一个BFC。
 
 ### 9.6.1 固定定位(Fixed Positioning)
 
-## 9.7 display、position和float的关系
+## 9.7 display、position和float的关系(重要！)
+
+这三个属性会影响盒子生成和布局，其相互作用如下：
+
+1. 如果**display**是**none**，那么**position**和**float**就不起作用了。在这种情况下，元素不会产生盒子；
+2. 否则，如果**position**是**absolute**或者**fixed**，生成的盒子是绝对定位，**float**的计算值是**none**，
+   并且**display**按照下表设置。位置将由**top**，**right**，**bottom**，**left**属性和盒子的包含块(containing
+   block)决定；
+3. 否则，如果**float**有个非**none**的值，盒子就会浮动并且**display**按照下表设置；
+4. 否则，如果元素是根元素，**display**按照下表设置，除了指定的值是**list-item**(无论计算值将会是**block**或者**list-item**)
+   在CSS2.1中将会使根元素的**display**为**undefined**；
+5. 否则，剩下的**display**属性即为所设置的值。
+
+指定值 | 计算值 
+-------|---------
+inline-table | table
+inline, table-row-group, table-column, table-column-group, table-header-group, table-footer-group, table-row, table-cell, table-caption, inline-block | block
+others | same as specified
 
 ## 9.8 普通流、浮动和绝对定位的比较
 
