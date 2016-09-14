@@ -133,9 +133,7 @@ value has been propagated to the viewport)都会为内容创建一个BFC。
 指定值 | 计算值 
 -------|------------------
 inline-table | table
-inline, table-row-group, table-column, table-column-group, 
-table-header-group, table-footer-group, table-row, 
-table-cell, table-caption, inline-block | block
+inline, table-row-group, table-column, table-column-group, <br/>table-header-group, table-footer-group, table-row, <br/>table-cell, table-caption, inline-block | block
 others | same as specified
 
 ## 9.8 普通流、浮动和绝对定位的比较
