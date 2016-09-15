@@ -150,11 +150,40 @@ others | same as specified
 
 ### 9.9.1 指定栈级别：z-index属性
 
+**z-index**
+
+- Value: auto | <integer> | inherit 
+- initial: auto 
+- Applies to : **定位元素**
+- Inherited: no 
+- Percentage: N/A
+- Media: visual 
+- Computed value: 指定的值
+
+对于**定位元素**，**z-index**属性制定了：
+
+1. 盒子的栈级别在当前栈上下文中；
+2. 是否盒子创建一个栈上下文。
+
+在CSS2.1中，每个盒子都有一个三维的位置。出了在水平和垂直位置，盒子也会沿着**z轴**布局。
+z轴位置在盒子可见层叠时是很重要的。
+
+渲染树绘制到canvas上的顺序是按照栈上下文的。栈上下文可以包含更多的栈上下文。A stacking context is atomic
+from the point of view of its parent stacking context; boxes in other stacking contexts 
+may not come between any of its boxes.
+
+每个盒子只属于一个栈上下文。每个在指定栈上下文的定位盒子都有一个整数的栈级别。
+栈级别更大的盒子总是在级别低的盒子前面。盒子也可以有负数的级别。一个栈上下文栈级别
+相同的盒子按照在文档中的顺序确定先后。
+
+根元素形成根栈上下文。其他栈上下文通过任何**z-index**计算值不为**auto**的定位元素
+(包括相对定位)生成。栈上下文并不必须与包含块相关。
+
 ## 9.10 文字方向：direction和unicode-bidi属性
 
 ## 结语
 
-终于可以写结尾了，重点是VFM、BFC、各种盒子，后续内容抽空再写，歇会儿。
+终于可以写结尾了，重点是VFM、BFC、z-index、各种盒子，后续内容抽空再写，歇会儿。
 
 ## 参考
 
