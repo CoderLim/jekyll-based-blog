@@ -150,13 +150,12 @@ others | same as specified
 
 ### 9.9.1 指定栈级别：z-index属性
 
-**z-index**
-- Value: auto | <integer> | inherit 
-- initial: auto 
+- Value: auto | <integer> | inherit
+- initial: auto
 - Applies to : **定位元素**
-- Inherited: no 
+- Inherited: no
 - Percentage: N/A
-- Media: visual 
+- Media: visual
 - Computed value: 指定的值
 
 对于**定位元素**，**z-index**属性指定了：
