@@ -150,7 +150,8 @@ others | same as specified
 
 ### 9.9.1 指定栈级别：z-index属性
 
-- Value: auto | <integer> | inherit
+**z-index**
+- Value: auto \| <integer> \| inherit
 - initial: auto
 - Applies to : **定位元素**
 - Inherited: no
