@@ -59,7 +59,7 @@ tags: exvim;vim;使用;方法;终极;总结;入门;
 
 ### 如何全局查找
 
-使用命令：GS: <your-word>，如果提示lid: can't locate 'ID': No such file or directory，
+使用命令：GS: \<your-word\>，如果提示`lid: can't locate 'ID': No such file or directory`，
 说明ID索引文件没有生成，在你的macvim执行:Update(注意大小写)，会更新你的工程，
 看看里面是不是却少安装gawk，如果是，请参考[这里](http://macappstore.org/gawk/)
 
