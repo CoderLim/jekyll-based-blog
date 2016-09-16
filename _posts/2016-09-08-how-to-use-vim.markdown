@@ -77,7 +77,7 @@ tags: exvim;vim;使用;方法;终极;总结;入门;
 估计是这个插件对当前文件类型有检查。
 
 ## 参考
-[exvim中文](http://exvim.github.io/docs-zh/)
-[Vim入门教程](http://blog.jobbole.com/86132/)
-[Zen Coding: A Speedy Way To Write HTML/CSS Code](https://www.smashingmagazine.com/2009/11/zen-coding-a-new-way-to-write-html-code/)
-[Zen Coding: 一种快速编写HTML/CSS代码的方法](https://www.qianduan.net/zen-coding-a-new-way-to-write-html-code/)
+[exvim中文](http://exvim.github.io/docs-zh/)<br/>
+[Vim入门教程](http://blog.jobbole.com/86132/)<br/>
+[Zen Coding: A Speedy Way To Write HTML/CSS Code](https://www.smashingmagazine.com/2009/11/zen-coding-a-new-way-to-write-html-code/)<br/>
+[Zen Coding: 一种快速编写HTML/CSS代码的方法](https://www.qianduan.net/zen-coding-a-new-way-to-write-html-code/)<br/>
