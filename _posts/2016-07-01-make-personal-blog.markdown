@@ -28,10 +28,10 @@ tags: personal;blog;jekyll;个人博客;github-pages;
 于是开始按照教程购买配置，什么？购买？没错，是需要花钱的，购买的网站就是口碑一向很好的hostgator，庆幸的是有优惠券，可以去百科找hostgator有可用的
 优惠券，购买域名和主机大概花了我400+软妹币。跟着教程走没问题，很简单。
 
-一切都搞定了，安装wordpress，漂亮，[我的网站](http://gengliming.com)可以访问了。但是还要选择主题样式，很麻烦，选了主题还要找图片，唉～对于我这个
-app程序员来说还真费劲，如果可以直接修改源码可能对于我来说还容易点。
+一切都搞定了，安装wordpress，漂亮，[我的网站](http://gengliming.com)可以访问了。但是还要选择主题样式，很麻烦，选了主题还要找图片，唉～对于我来
+说还真费劲，如果可以直接修改源码可能对于我来说还容易点。
 
-就在我试了多个theme后，发现了jekyll主题，有多个主题都是我想要的，于是我就搜**如何把jekyll主题设置到wordpress**，发现了jekyll+github-pages打造自己
+就在我试了N个theme后，发现了jekyll主题，有多个主题都是我想要的，于是我就搜**如何把jekyll主题设置到wordpress**，发现了jekyll+github-pages打造自己
 的博客，居然写着免费不花钱，什么？不花钱？！<br/>
 ![image]({{site.imageurl}}/assets/images/2016/personal-blog-freak.png)<br/>
 
@@ -40,13 +40,13 @@ app程序员来说还真费劲，如果可以直接修改源码可能对于我�
 
 ### jekyll
 
-国外有很多人的技术博客都是基于jekyll。直接使用github主机，而且有很多主题可用，我当时创建时，是直接down的onevat的博客源码，然后自定义的。所以如果你
+国外有很多人的技术博客都是基于jekyll。直接使用github主机，而且有很多主题可用，我当时创建是直接down的onevat的博客源码，然后自定义的。所以如果你
 喜欢我的博客，就直接down我的代码，[这里][7]，但是不要忘记点击[这页面][7]右上角的star。其他都是次要的，主要的还是写博客，你需要懂得[markdown][8]语法。
 
 ## jekyll-based blog
 
-我的故事讲完了，该轮到你动手了，跟着[jekyll中国的官方教程][6]进行，很简单，如果有不懂的地方欢迎留言。如果你没有github账号，就落伍了，我认为看到
-这篇文章的人应该是搞技术的，真的该注册并日常使用github，没有的来[这里注册][9]。先让网站跑起来，更换域名下面再说。
+我的故事讲完了，该轮到你动手了，跟着[jekyll中国的官方教程][6]进行，很简单，如果有不懂的地方欢迎留言。如果你没有github账号,来[这里注册][9]。
+先让网站跑起来，更换域名下面再说。
 
 ### 添加google analytic统计
 
@@ -66,7 +66,7 @@ app程序员来说还真费劲，如果可以直接修改源码可能对于我�
 
 什么是seo？seo叫做搜索引擎优化，可以让其他网友更容搜到你的文章，增加访问量。
 
-如何做搜索引擎优化呢？如果你是down的[我的代码][7]就不用设置了，否则给你推荐[jekyll-seo-tag][13]，主要是优化meta数据。
+如何做搜索引擎优化呢？如果你是down的[我的代码][7]就不用设置了，否则给你推荐一个第三方框架[jekyll-seo-tag][13]，主要是优化meta数据。
 
 ### 如何使用我的域名
 
@@ -92,7 +92,7 @@ app程序员来说还真费劲，如果可以直接修改源码可能对于我�
 [1]: http://collegeinfogeek.com/personal-website/ "hostgator tutorial"
 [2]: http://cn.hostgator.com/?utm_source=baidu&utm_medium=cpc&utm_campaign=%C6%B7%C5%C6-Hostgator&utm_term=hostgator "hostgator中国"
 [3]: http://blog.sina.com.cn/gengliming110 "我的新浪博客"
-[4]: http://write.blog.csdn.net/postlist "我的CSDN博客"
+[4]: http://blog.csdn.net/zaijianluoye110 "我的CSDN博客"
 [5]: http://www.jianshu.com/users/6e62f1bcb77a/latest_articles "我的简书"
 [6]: http://jekyll.bootcss.com/ "jekyll cn"
 [7]: https://github.com/CoderGLM/jekyll-based-blog "jekyll-based-blog"
