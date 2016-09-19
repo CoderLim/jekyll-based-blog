@@ -136,12 +136,6 @@ Yahoo!Mail团队在使用XMLHttpRequest时发现：POST请求在浏览器中的�
 静态资源放到cookie无关的域名还有另一个好处：一些代理拒绝缓存带着cookie请求的组件。与此相关的,如果你在考虑主页使用example.org域名还是使用www.example.org,应该考虑cookie的影响。删除www会让你只能把cookie写在*.example.org下，因此为了性能的原因最好使用www
 的子域名，并把cookie写在子域名下。
 
-## Javascript
-
-关于语法的优化，直接上张图：
-
-![image]({{ site.imageurl }}/assets/images/2016/javascript-syntax-optimize.png)
-
 ## CSS
 
 ### 1、把样式表放到上边
@@ -154,7 +148,12 @@ Yahoo!Mail团队在使用XMLHttpRequest时发现：POST请求在浏览器中的�
 
 ### 5、[如何提升 CSS 选择器性能](http://www.jianshu.com/p/268c7f3dd7a6)
 
-## JS
+## Javascript
+
+
+关于语法的优化，直接上张图：
+
+![image]({{ site.imageurl }}/assets/images/2016/javascript-syntax-optimize.png)
 
 ### 1、把Scripts放到底部
 
@@ -189,6 +188,7 @@ Yahoo!Mail团队在使用XMLHttpRequest时发现：POST请求在浏览器中的�
 favicon.ico 是保存在服务器网站根目录的图片。它是一个必然的危害，因为即使你不关心它，浏览器仍然会请求它，因此最好不要产生404响应。而且因为在同一个服务器上，每次请求它cookie都会被发送。这个图片还会阻碍下载队列，比如在ie中，当你在onload中请求额外的组件时，favicon将会在额外组件之前下载。
 
 因此减缓有favicon这个缺点应确保：
+
 * 文件小，最好低于1K；
 * 设置你因为合适的Expires请求头（因为当你决定更改它的时候，你不能重命名）。你可以安稳的设置过期时间是未来的几个月。你可以查看最后一次favicon的修改时间做出有依据的决定。
 
