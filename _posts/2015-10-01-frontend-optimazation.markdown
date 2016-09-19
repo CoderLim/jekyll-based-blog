@@ -136,6 +136,12 @@ Yahoo!Mail团队在使用XMLHttpRequest时发现：POST请求在浏览器中的�
 静态资源放到cookie无关的域名还有另一个好处：一些代理拒绝缓存带着cookie请求的组件。与此相关的,如果你在考虑主页使用example.org域名还是使用www.example.org,应该考虑cookie的影响。删除www会让你只能把cookie写在*.example.org下，因此为了性能的原因最好使用www
 的子域名，并把cookie写在子域名下。
 
+## Javascript
+
+关于语法的优化，直接上张图：
+
+![image]({{ site.imageurl }}/assets/images/2016/javascript-syntax-optimize.png)
+
 ## CSS
 
 ### 1、把样式表放到上边
@@ -202,7 +208,8 @@ favicon.ico 是保存在服务器网站根目录的图片。它是一个必然�
 ## 参考：
 
 [Best Practices for Speeding Up Your Web Site](https://developer.yahoo.com/performance/rules.html) <br/>
-[Repaint 、Reflow 的基本认识和优化](https://segmentfault.com/a/1190000002629708)
+[Repaint 、Reflow 的基本认识和优化](https://segmentfault.com/a/1190000002629708)<br/>
+[《Javascript高级教程(第3版)》]()
 
 
 [1]:http://baike.baidu.com/link?url=6SjPcEJePTLKWT4ERuBR6NFpRPbuUyPip7srH1tSC791q93iERuyO96TbP3im8jBqBfbkSvn8x3Dwznyxexld_ "http code"
