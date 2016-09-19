@@ -9,11 +9,12 @@ tags: 前端;性能优化
 
 ## 导语:
 
->性能对于程序来说至关重要。本文主要内容是对[文章]()的翻译，再加上平常碰到的优化Tip，从Content、Server、Cookie、CSS、Javascript、Images、Mobile几方面总结。
-
->文中翻译的是需要解释的tip，所以有些看小标题就知道如何优化的我就不翻译了，如果这些未翻译的tip有需要的朋友可以给我留言。
-
->本文章后续会把每个优化方案的翻译呈现给大家。2016-5-10更新“为组件使用无Cookie的域名”
+> 性能对于程序来说至关重要。本文主要内容是对[文章](https://developer.yahoo.com/performance/rules.html)的翻译，再加上平常碰到的优化Tip，
+> 从Content、Server、Cookie、CSS、Javascript、Images、Mobile几方面总结。
+>
+> 文中翻译的是需要解释的tip，所以有些看小标题就知道如何优化的我就不翻译了，如果这些未翻译的tip有需要的朋友可以给我留言。
+>
+> 本文章后续会把每个优化方案的翻译呈现给大家。2016-5-10更新“为组件使用无Cookie的域名”
 
 这里有篇文章，介绍的点很多：[点击进入](http://www.jianshu.com/p/be5aea4a222f)
 
