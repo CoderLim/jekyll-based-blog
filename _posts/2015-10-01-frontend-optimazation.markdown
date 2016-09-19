@@ -14,7 +14,7 @@ tags: 前端;性能优化
 >
 > 文中翻译的是需要解释的tip，所以有些看小标题就知道如何优化的我就不翻译了，如果这些未翻译的tip有需要的朋友可以给我留言。
 >
-> 本文章后续会把每个优化方案的翻译呈现给大家。2016-5-10更新“为组件使用无Cookie的域名”
+> 本文章后续会把每个优化方案的翻译呈现给大家。
 
 这里有篇文章，介绍的点很多：[点击进入](http://www.jianshu.com/p/be5aea4a222f)
 
@@ -44,6 +44,29 @@ IE默认缓存DNS查询是30分钟，是由注册表的DnsCacheTimeout指定的�
 减少唯一主机名的数量潜在的会减少发生在页面中并行下载的数量。避免DNS查询减少响应次数，但是减少并行下载的数量可能会增加响应次数。我的指导意见是分离这些组件到2-4个主机名下。这个结果是在减少DNS查询和允许高度并行下载之间的折中。
 
 ### 3、避免重定向
+
+重定向的[http状态码][1]是301和302。这里有个301的例子：
+
+```
+      HTTP/1.1 301 Moved Permanently
+      Location: http://example.com/newuri
+      Content-Type: text/html
+```
+
+浏览器自动跳转到**location**指定的地址。所有关于重定向的必要信息都在这个header里。
+响应体通常是空的。除非指定请求头(比如**Expires**或者**Cache-Control**)，否则301和302响应都不会缓存。
+
+meta的refresh标签和javascript是其他重定向的方式，但是如果你必须重定向，最好的技术是使用标准的3xx状态码，
+主要是确保返回按钮可以正确使用。
+
+主要是需要记住重定向会降低用户体验。在用户和html文档之间插入重定向会延迟页面中的所有东西，因为在html文档到达前，没有东西可以渲染，
+没有控件可以下载。
+
+一种很损耗的重定向经常发生而且web开发者通常不知道。当URL的末尾的斜杠丢失时就会发生。比如，目标地址是[http://astrology.yahoo.com/astrology ](http://astrology.yahoo.com/astrology)
+会收到一个301响应（包含了一个重定向到[http://astrology.yahoo.com/astrology/ ](http://astrology.yahoo.com/astrology/)。这种情况在Apache里通过使用
+Alias 或者 mod_rewrite，或者DirectorySlash指令修复。
+
+连接一个老站点和新站点是另一个常见的使用重定向的情况。使用重定向链接两个站点很简单，并且只需要很少的代码，但是这降低了用户体验。
 
 ### 4、使用Ajax缓存
 
@@ -180,3 +203,6 @@ favicon.ico 是保存在服务器网站根目录的图片。它是一个必然�
 
 [Best Practices for Speeding Up Your Web Site](https://developer.yahoo.com/performance/rules.html) <br/>
 [Repaint 、Reflow 的基本认识和优化](https://segmentfault.com/a/1190000002629708)
+
+
+[1]:http://baike.baidu.com/link?url=6SjPcEJePTLKWT4ERuBR6NFpRPbuUyPip7srH1tSC791q93iERuyO96TbP3im8jBqBfbkSvn8x3Dwznyxexld_ "http code"
