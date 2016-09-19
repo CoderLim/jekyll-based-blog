@@ -206,3 +206,4 @@ favicon.ico 是保存在服务器网站根目录的图片。它是一个必然�
 
 
 [1]:http://baike.baidu.com/link?url=6SjPcEJePTLKWT4ERuBR6NFpRPbuUyPip7srH1tSC791q93iERuyO96TbP3im8jBqBfbkSvn8x3Dwznyxexld_ "http code"
+[2]:https://segmentfault.com/a/1190000002629708 "Repaint 、Reflow 的基本认识和优化"
