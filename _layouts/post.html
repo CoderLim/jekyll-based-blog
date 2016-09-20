@@ -9,7 +9,9 @@ layout: default
     </div>
     <h1 class="post-title">{{ page.title }}</h1>
 
-    <p style="color:lightgray;font-size:13px;">转载请注明出处：{{ page.url }}</p>
+    <p style="color:lightgray;font-size:14px;">
+      转载请注明出处：<a href="{{ page.url | prepend: site.url }}">{{ page.url | prepend: site.url }}</a>
+    </p>
   </header>
 
   <section class="post">
