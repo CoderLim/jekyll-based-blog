@@ -96,7 +96,7 @@ function handleEvent(event) {
 6.  并且让我说的话，它是没有内存泄漏的。
 
 ## 参考
-
+ 
 [addEvent() – My Solution](http://dean.edwards.name/weblog/2005/10/add-event/)：js专家的addEvent是这么写的；<br/>
 [The this keyword](http://www.quirksmode.org/js/this.html)：this关键字在事件中的不同表现；<br/>
 [addEvent() considered harmful](http://www.quirksmode.org/blog/archives/2005/08/addevent_consid.html)：通用的addEvent居然有这么多问题。
