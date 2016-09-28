@@ -7,9 +7,9 @@ category: ReactNative
 tags: react-native;入门;学习;
 ---
 
-> 此博客将记录了我学习RN过程中很有价值的内容，源码可以参考[ReactNativeLeaning(ES6版)][1]，最后附了一个sinaWebBo项目。
-> 顺便支持一下[react-native-image-browser][2]吧<br/>
-> 
+> 此博客将记录了我学习RN过程中很有价值的内容，源码可以参考[ReactNativeLeaning(ES6版)][1]，源码最后附了一个sinaWebBo项目，看着还不错^_^。
+> 顺便支持一下[react-native-image-browser][2]吧。<br/>
+>
 > 新增：“如何运行在android模拟器”
 
 ## 1、Hello World！
