@@ -7,8 +7,9 @@ category: ReactNative
 tags: react-native;入门;学习;
 ---
 
-> 此博客将记录我学习RN很有价值的内容，代码学习可以参考[ReactNativeLeaning(ES6版)](https://github.com/CoderGLM/ReactNativeLeaning)，最后附了一个sinaWebBo项目。<br/>
-> 支持一下[react-native-image-browser](https://github.com/CoderGLM/react-native-image-browser)吧<br/>
+> 此博客将记录了我学习RN过程中很有价值的内容，源码可以参考[ReactNativeLeaning(ES6版)][1]，最后附了一个sinaWebBo项目。
+> 顺便支持一下[react-native-image-browser][2]吧<br/>
+> 
 > 新增：“如何运行在android模拟器”
 
 ## 1、Hello World！
@@ -75,7 +76,9 @@ ps：手机和电脑要用数据线连接；手机和电脑要连到相同的wif
     export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools` <br/>
 
 2. failed to find target with hash string 'android-23' in: 你的sdk的路径：直接在android studio中的preferences里搜sdk，然后apply就行了
-
 3. failed to find Build Tools revision 23.0.1： 还是在android studio的preferences的Android SDK下，选择SDK Tools，勾选右下角的Show Package Details，选择23.0.1的就行了，然后apply
-
 4. com.android.builder.testing.api.DeviceException: No connected devices!：找工具栏的AVD Manager，下载模拟器
+
+
+[1]:https://github.com/CoderGLM/ReactNativeLeaning "ReactNativeLeaning"
+[2]:https://github.com/CoderGLM/react-native-image-browser "react-native-image-browser"
