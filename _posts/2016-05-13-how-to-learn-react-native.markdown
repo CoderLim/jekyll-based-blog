@@ -15,8 +15,9 @@ tags: react-native;入门;学习;
 
 react-native init AwesomeProject 卡住不动：[解决React Native初始化项目速度很慢的问题](http://www.jianshu.com/p/62242e424bae)；
 
-## 2、选个好用的编辑器：atom+nuclide的[详细使用方法](http://blog.csdn.net/hello_hwc/article/details/51612139)
+## 2、选个好用的编辑器
 
+atom+nuclide的[详细使用方法](http://blog.csdn.net/hello_hwc/article/details/51612139)
 这个编辑器很好用，有察看dom结构和debugger功能，不过如果你喜欢别的编辑器也可以用；
 
 ## 3、学习的两个重点，布局和语言
