@@ -41,6 +41,7 @@ tags: exvim;vim;使用;方法;终极;总结;入门;
 - **vip**: 选取当前光标所在段落
 - **<<**: 左缩进
 - **>>**: 右缩进
+- **ctrl+6**: 两个文件切换,[go further](http://stackoverflow.com/questions/19971023/how-to-go-back-to-previous-opened-file-in-vim)
 - **:bn**: 切换缓冲区（即编辑窗口） 
 - **:bp**: 切换缓冲区
 - **mx**: 添加（移除）x标签
