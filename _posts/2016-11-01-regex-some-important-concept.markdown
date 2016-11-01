@@ -84,5 +84,5 @@ console.log(reg2.lastIndex) // 2
 2.[Regular Expressions](https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions)<br/>
 3.[Zero-Length Assertions](http://www.regular-expressions.info/lookaround.html)
 
-[1] https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/lastIndex "正则表达式之lastIndex"
+[1]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/lastIndex "正则表达式之lastIndex"
 
