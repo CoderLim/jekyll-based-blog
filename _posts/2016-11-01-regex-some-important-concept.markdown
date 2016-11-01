@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 正则表达式之`?: ?= ?!`
+title: 正则表达式之\?: \?= \?!
 date: 2016.11.01 10:12.000000000 +09:00
 category: 正则表达式
-description:  本文详细解读`?:，?=，?!`的使用方法
+description:  本文详细解读"?:"，"?="，"?!"的使用方法
 tags: 正则表达式;regex;javascript;
 ---
 
