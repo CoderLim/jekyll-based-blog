@@ -7,13 +7,58 @@ description: 本文详细解读`?:，?=，?!`的使用方法
 tags: 正则表达式;regex;javascript
 ---
 
-## 捕获 VS 非捕获
+## 分组 VS 非捕获分组
+
+在正则表达式中遇到小括号就可以认为是一个分组，比如/(a)bcda\1/，(a)就是一个分组，\1代表第一个分组。这种分组可以成为
+捕获分组。
+
+```
+var reg = /(a)bcd\1/
+console.log(reg.test('abcdef')) // false
+console.log(reg.test('abcdaef')) // true
+```
+
+与其相对的就是非捕获分组，比如/(?:a)bcda/，(?:a)就是非捕获分组，不能通过\1引用。
+
+```
+var reg = /(?:a)bcd\1/
+console.log(reg.test('abcdaef')) // false
+```
 
 ## 贪婪 VS 非贪婪
 
-## 零宽度
+贪婪的意思是尽可能多的匹配，比如:
 
-## 前瞻 VS 后顾
+```
+var str = 'aaaaaabc'
+console.log(/a+/.exec(str)) // 'aaaaaa'
+console.log(/a+?/.exec(str)) // 'a'
+```
+非贪婪的意思就是尽可能少的匹配，如上，其语法的表示就是在+或*后满加一个?。
+
+## 零宽度断言 之 前瞻 后顾
+
+零宽度断言就是子表达式只是预测而不匹配，不会影响到[lastIndex][1]，如下的reg2中的(?=xxxx)就是零宽度断言。
+
+```
+var str = 'abcdef'
+var reg1 = /ab(?:cdef)/g
+reg1.exec(str)
+console.log(reg1.lastIndex) // 6
+
+var reg2 = /ab(?=cdef)/g
+reg2.exec(str)
+console.log(reg2.lastIndex) // 2
+```
+
+### 前瞻 后顾
+
+> Lookahead and lookbehind, collectively called "lookaround", are zero-length assertions just like
+> the start and end of line, and start and end of word anchors.
+> The difference is that lookaround actually matches characters, but then gives up the match,
+> returning only the result: match or no match. That is why they are called "assertions".
+> They do not consume characters in the string, but only assert whether a match is possible or not. Lookaround allows you to create regular expressions that are impossible to create without them, 
+> or that would get very longwinded without them.
 
 ## ?: ?= ?!
 
@@ -36,5 +81,8 @@ tags: 正则表达式;regex;javascript
 ## 参考
 
 1.[使用正则表达式找出不包含特定字符串的条目](http://www.imkevinyang.com/2009/08/%E4%BD%BF%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%89%BE%E5%87%BA%E4%B8%8D%E5%8C%85%E5%90%AB%E7%89%B9%E5%AE%9A%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9D%A1%E7%9B%AE.html) <br/>
-2.[Regular Expressions](https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions)
+2.[Regular Expressions](https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions)<br/>
+3.[Zero-Length Assertions](http://www.regular-expressions.info/lookaround.html)
+
+[1] https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/lastIndex "正则表达式之lastIndex"
 
