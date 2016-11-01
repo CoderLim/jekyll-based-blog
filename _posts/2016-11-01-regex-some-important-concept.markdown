@@ -7,7 +7,7 @@ description: 本文详细解读`?:，?=，?!`的使用方法
 tags: 正则表达式;regex;javascript
 ---
 
-## 分组 VS 非捕获分组
+## 分组 非捕获分组
 
 在正则表达式中遇到小括号就可以认为是一个分组，比如/(a)bcda\1/，(a)就是一个分组，\1代表第一个分组。这种分组可以成为
 捕获分组。
@@ -25,7 +25,7 @@ var reg = /(?:a)bcd\1/
 console.log(reg.test('abcdaef')) // false
 ```
 
-## 贪婪 VS 非贪婪
+## 贪婪 非贪婪
 
 贪婪的意思是尽可能多的匹配，比如:
 
@@ -36,7 +36,7 @@ console.log(/a+?/.exec(str)) // 'a'
 ```
 非贪婪的意思就是尽可能少的匹配，如上，其语法的表示就是在+或*后满加一个?。
 
-## 零宽度断言 之 前瞻 后顾
+## 零宽度断言 前瞻 后顾
 
 零宽度断言就是子表达式只是预测而不匹配，不会影响到[lastIndex][1]，如下的reg2中的(?=xxxx)就是零宽度断言。
 
@@ -53,12 +53,12 @@ console.log(reg2.lastIndex) // 2
 
 ### 前瞻 后顾
 
-> Lookahead and lookbehind, collectively called "lookaround", are zero-length assertions just like
-> the start and end of line, and start and end of word anchors.
-> The difference is that lookaround actually matches characters, but then gives up the match,
-> returning only the result: match or no match. That is why they are called "assertions".
-> They do not consume characters in the string, but only assert whether a match is possible or not. Lookaround allows you to create regular expressions that are impossible to create without them, 
-> or that would get very longwinded without them.
+前瞻（lookahead）和后顾（lookbehind），总起来叫lookaround，它们就是零宽度断言，就像匹配行首和行尾，匹配单词边界，
+不同之处是，lookaround实际上是匹配字符的，但是最终会放弃匹配，只返回是否匹配。这就是为什么它们只叫做断言。
+它们并不消耗字符，只断言一个匹配是否可能。
+
+前瞻包括：x(?=y) 和 x(?!y)
+后顾包括：(?<x)y 和 (?<!)y
 
 ## ?: ?= ?!
 
