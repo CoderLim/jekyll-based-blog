@@ -49,11 +49,11 @@ CSS:
 
 ## steps
 
+steps\(2,start\):
 ![steps(2,start)]({{ site.imageurl }}/assets/images/2016/steps(2,start).png)
-steps\(2,start\)
 
+steps\(4,end\):
 ![steps(4,end)]({{ site.imageurl }}/assets/images/2016/steps(4,end).png)
-steps\(4,end\)
 
 steps(number_of_step, direction)定义了一个step函数,将输出分成等距的步。还是用我擅长的方言说吧，比如steps(2,start)(先忽略*start*)，
 意思是把时间分成2等分，每等个时间段持续一种不变的状态。(其中number_of_step是步数，direction是方向，默认是end)
