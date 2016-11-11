@@ -59,6 +59,8 @@ steps(number_of_step, direction)定义了一个step函数,将输出分成等距�
 
 什么是左持续和右持续呢？请看下面坐标里的大头针，针尖方向的左就是左持续，相反就是右持续，^~^!
 
+[狠狠的点击这里][2]，这是个steps(4)的示例。
+
 steps\(2,start\):
 ![steps(2,start)]({{ site.imageurl }}/assets/images/2016/steps(2,start).png)
 
@@ -145,3 +147,4 @@ balabala最重要的就是最后的对比啊，对比才能更好的理解，不
 
 
 [1]: http://en.wikipedia.org/wiki/Left-continuous#Directional_and_semi-continuity "left- or right-continuous"
+[2]: https://jsfiddle.net/CoderGLM/e6hd40c8/ "steps(4)示例"
