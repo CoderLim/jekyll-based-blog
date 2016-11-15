@@ -196,7 +196,7 @@ may not come between any of its boxes.
 6. z-index是0的子栈上下文和栈级别是栈上下文和z-index为0的定位后代元素；
 7. z-index为正数的子栈上下文（值小的优先）。
 
-## 9.10 文字方向：direction和unicode-bidi属性
+~~ ## 9.10 文字方向：direction和unicode-bidi属性 ~~
 
 ## 结语
 
