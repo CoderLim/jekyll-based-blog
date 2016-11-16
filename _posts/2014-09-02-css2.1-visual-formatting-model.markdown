@@ -29,7 +29,7 @@ VFM没有指定格式化的所有方面（比如letter－spacing的算法）。�
 
 ### 9.1.1 视窗
 
-...
+没啥好说的，就是你浏览页面大大的窗口。
 
 ### 9.1.2 包含块
 
@@ -50,14 +50,45 @@ VFM没有指定格式化的所有方面（比如letter－spacing的算法）。�
 块级元素是在原文档中显示格式化为block的元素（比如段落）。display属性值为'block','list-item'和'table'可以让元素称为块级元素。
 
 块级盒子是参与到[块级上下文](https://www.w3.org/TR/CSS2/visuren.html#block-formatting)的盒子。
-每个块级元素都会产生一个主(principal)块级盒子来包含后代盒子并生成内容，而且它也参与(involve in)了任何定位方案。
-一些块级元素有可能会产生除了（in addition to）主块级盒子外的其它盒子：如'list-item'元素。这些额外(additional)的盒子会针对主盒子被放置。
+每个块级元素都会产生一个块级盒子来包含后代盒子并生成内容，而且它也参与(involve in)了任何定位方案。
+一些块级元素有可能会产生除了主块级盒子外的其它盒子：如'list-item'元素。这些额外(additional)的盒子会针对主盒子被放置。
 
-除了table盒子（后续章节会提到）和替换元素，块级盒子也是块容器盒子(block container box)。
+除了table盒子（后续章节会提到）和替换元素，块级盒子也是块容器盒子。
 
 #### 9.2.1.1 匿名块盒子
 
-...
+```
+<div>
+  Some text
+  <p>More text
+</div>
+```
+（假设div和p都是display:block）
+
+如果在一个块容器盒子（比如上面为div生成的）内部有一个块级盒子（比如上面的p），那么我们就强制它内部只能包含块级盒子，所以
+为*Some text*这个文本声称了一个匿名块级盒子。
+
+当行内盒子包含一个块级普通流内盒子时，行内盒子（和与它在同一个行盒子的行内父元素）将会被打破并环绕块级盒子（和任何连续的或者
+仅仅被空格分割的兄弟元素），最终此行盒子被分割成两个盒子（即使某一边是空的）。分割的两个盒子被包含在匿名盒子里。
+
+```
+<!-- 来看个例子 -->
+p { display: inline; }
+span { display: block; }
+
+```
+
+```
+<p>
+  This is anonymous text before the span.
+  <span>This is the content of SPAN.</span>
+  This is anonymous text after the span.
+</p>
+
+<!--
+p元素包含一个匿名文本C1，块级元素，另一个匿名文本C2.
+-->
+```
 
 ### 9.2.2 行内级元素(Inline-level Elements)和行内盒子(Inline boxes)
 
