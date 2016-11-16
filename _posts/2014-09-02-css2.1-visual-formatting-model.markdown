@@ -9,10 +9,10 @@ tags: 前端;类;VFM;CSS2.1;
 
 ## Preamble
 
-> 都说CSS学习来成本不高，但是内部机制还是要深入了解一下。如果你心(yan)思(jing)细(bu)腻(xia)会发现博客里有些只有标题，有两个原因：1、
-> 内容是对标题的**简单**阐述；2、捡着重点写的，有时间再补全其他。
+> 这里我把视觉模型谈谈，还没写完，从最重要的有价值的章节（我管它叫做MVS，如果喜欢篮球应该对MVP很了解吧）开始写的，后续还会写，
+> 不要因为里面有的只有标题就冲我扔臭鞋。
 
-## 9.1 节点节点介绍可视化格式化模型(Visual Formatting Model)
+## 9.1 可视化格式化模型(Visual Formatting Model)
 
 这章和接下来描述了可视化格式化模型（VFM）：用户代理如何在[可视媒体](https://www.w3.org/TR/CSS2/media.html)上处理[文档树](https://www.w3.org/TR/CSS2/conform.html#doctree).
 
@@ -27,11 +27,11 @@ tags: 前端;类;VFM;CSS2.1;
 
 VFM没有指定格式化的所有方面（比如letter－spacing的算法）。遵循用户代理有可能会对于此说明没有提到的格式化问题有不同的表现。
 
-### 9.1.1 视窗(Viewport)
+### 9.1.1 视窗
 
 ...
 
-### 9.1.2 包含块(Containing Blocks)
+### 9.1.2 包含块
 
 在CSS2.1中，很多盒子位置和尺寸的计算是对于(respect to)长方形盒子（包含块）的边缘计算的。通常生成的盒子作为后代盒子的包含块。
 常说的“一个盒子的包含块”意思是“这个盒子存在于的包含块”，而不是它生成的。
@@ -40,7 +40,7 @@ VFM没有指定格式化的所有方面（比如letter－spacing的算法）。�
 
 在[下章](https://www.w3.org/TR/CSS2/visudet.html)会告诉你包含块的尺寸如何计算的[详细信息](https://www.w3.org/TR/CSS2/visudet.html#containing-block-details)。
 
-## 9.2 控制盒子的生成(Controlling Box Generation)
+## 9.2 控制盒子的生成
 
 接下来的一节描述了CSS2.1中可能会生成的盒子类型。盒子类型在某种程度上（in part）会影响它在VFM中的表现。
 在下面描述的display属性置顶了盒子类型。
@@ -71,7 +71,7 @@ VFM没有指定格式化的所有方面（比如letter－spacing的算法）。�
 
 #### 9.2.2.1 匿名行内盒子
 
-## 9.3 定位方案(Positioning Schemes)
+## 9.3 定位方案
 
 ...
 
@@ -83,9 +83,9 @@ VFM没有指定格式化的所有方面（比如letter－spacing的算法）。�
 
 ...
 
-## 9.4 普通流(Normal flow)
+## 9.4 普通流
 
-### 9.4.1 块格式化上下文(Block Formatting Contexts)
+### 9.4.1 块格式化上下文(BFC)
 
 浮动、绝对定位元素，不是块盒子的块容器（比如inline-blocks、table-cells和table-captions)和overflow不是visible的块盒子（except when that
 value has been propagated to the viewport)都会为内容创建一个BFC。
@@ -95,19 +95,19 @@ value has been propagated to the viewport)都会为内容创建一个BFC。
 在BFC中，每个盒子的左外边接触包含块的左边（对于从右到左的格式化，接触右边）。这个是正确的即使是对于float的展现（尽管一个盒子的杭盒子可能由于浮动而皱缩）
 ，除非盒子创建一个新的BFC（在这种情况下，盒子自身可能会因为浮动[变得更狭窄](https://www.w3.org/TR/CSS2/visuren.html#bfc-next-to-float)）。
 
-### 9.4.2 行内格式化上下文(Inline formatting Contexts)
+### 9.4.2 行内格式化上下文(IFC)
 
 在IFC中，盒子是从包含块的顶部水平地一个接一个放置的。水平方向的margin、border和padding是有效的。
 这些赫宰在竖直方向可能会有不同的方式排列：它们的顶部或底部，也可能是它们中的文本的基线。
 包含这些盒子的长方形区域（最终形成一条线）叫做行盒子（line box）
 
-### 9.4.3 相对定位(Relative Positioning)
+### 9.4.3 相对定位
 
-## 9.5 浮动(Floats)
+## 9.5 浮动
 
-### 9.5.1 定位浮动(Positioning The Float)：float属性
- 
-... 
+### 9.5.1 定位浮动：float属性
+
+...
 
 ### 9.5.2 控制浮动旁边的流：clear属性
 
@@ -138,9 +138,9 @@ others | same as specified
 
 ## 9.8 普通流、浮动和绝对定位的比较
 
-### 9.8.1 普通流(Normal Flow)
+### 9.8.1 普通流
 
-### 9.8.2 相对定位(Relative Positioning)
+### 9.8.2 相对定位
 
 ### 9.8.3 浮动一个盒子
 
