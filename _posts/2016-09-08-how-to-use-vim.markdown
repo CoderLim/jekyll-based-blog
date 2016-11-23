@@ -79,6 +79,11 @@ tags: exvim;vim;使用;方法;终极;总结;入门;
 有一点要说明，就是插件装完了输入html:5然后按快捷键 <Ctrl+y+,>居然不展开，最后发现需要把当前文件先保存成html格式才行，
 估计是这个插件对当前文件类型有检查。
 
+## 其他插件
+
+1. 自动闭合[], {}：https://github.com/jiangmiao/auto-pairs
+2. 自动闭合html标签（<C+_>）：http://vim.sourceforge.net/scripts/script.php?script_id=13
+
 ## 参考
 [exvim中文](http://exvim.github.io/docs-zh/)<br/>
 [Vim入门教程](http://blog.jobbole.com/86132/)<br/>
