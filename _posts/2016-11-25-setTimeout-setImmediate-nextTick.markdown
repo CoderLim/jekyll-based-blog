@@ -14,13 +14,13 @@ tags: node;setImmediate;setTimeout;nextTick;
 
 ## api介绍
 
-1. setTimeout(callback, delay)：经过delay时间后只执行一次callback，但是并不能保证时间点的精确性。
+1. **setTimeout(callback, delay)**：经过delay时间后只执行一次callback，但是并不能保证时间点的精确性。
    delay的意思是，告诉callback可以被执行了，如果callback所在队列前面还有任务没执行，那它也得稍等等。
 
-2. <div id="setImmediate">setImmediate(callback)：执行callback的时机是在IO事件回调之后，并且在setTimeout和setInterval创建的
+2. <div id="setImmediate">**setImmediate(callback)**：执行callback的时机是在IO事件回调之后，并且在setTimeout和setInterval创建的
    timer之前。</div>
 
-3. nextTick(callback): 这个比较简单，会将callback放到执行站的底部，而setTimeout和setImmediate是添加到任务队列，
+3. **nextTick(callback)**: 这个比较简单，会将callback放到执行站的底部，而setTimeout和setImmediate是添加到任务队列，
    不知道什么是执行栈和任务队列的参考[这里](http://www.ruanyifeng.com/blog/2014/10/event-loop.html).
 
 ## 大众疑惑
