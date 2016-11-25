@@ -1,6 +1,6 @@
 ---
 layout: post
-title: setTimeout VS setImmediate VS nextTick
+title: setTimeout VS setImmediate
 date: 2016.11.25 13:10.000000000 +09:00
 category: node
 description: 本文章主要是简单聊聊setTimeout、setImmediate、nextTick的区别，虽然还有很多不确定，但是还是值得一看的。
@@ -77,7 +77,7 @@ fs.readFile('nodetest.js', function (err, data) {
 还有一种[说法][1]提到了，setTimeout与Immediate不是同一队列，所以会出现不可预测的先后执行。
 有何不顺眼的地方欢迎指正。
 
-1. https://github.com/nodejs/node-v0.x-archive/issues/6034 说到setTimeout与setImmediate不是同一队列
+[1]. https://github.com/nodejs/node-v0.x-archive/issues/6034 说到setTimeout与setImmediate不是同一队列
 
 ## 参考
 
