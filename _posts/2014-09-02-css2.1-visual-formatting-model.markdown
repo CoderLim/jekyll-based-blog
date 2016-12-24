@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Visual Formatting Model
+title: CSS视觉格式化模型 
 date: 2014.09.02 12:30.000000000 +09:00
 category: 前端相关
 description: CSS2.1说明的翻译，讲述了VFM（Visual Formatting Model），盒子模型，包含块，BFC，IFC，定位等
@@ -9,10 +9,10 @@ tags: 前端;类;VFM;CSS2.1;
 
 ## Preamble
 
-> 都说CSS学习来成本不高，但是内部机制还是要深入了解一下。如果你心(yan)思(jing)细(bu)腻(xia)会发现博客里有些只有标题，有两个原因：1、
-> 内容是对标题的**简单**阐述；2、捡着重点写的，有时间再补全其他。
+> 这里我把视觉模型谈谈，还没写完，从最重要的有价值的章节（我管它叫做MVS，如果喜欢篮球应该对MVP很了解吧）开始写的，后续还会写，
+> 不要因为里面有的只有标题就冲我扔臭鞋。
 
-## 9.1 节点节点介绍可视化格式化模型(Visual Formatting Model)
+## 9.1 可视化格式化模型(Visual Formatting Model)
 
 这章和接下来描述了可视化格式化模型（VFM）：用户代理如何在[可视媒体](https://www.w3.org/TR/CSS2/media.html)上处理[文档树](https://www.w3.org/TR/CSS2/conform.html#doctree).
 
@@ -27,11 +27,11 @@ tags: 前端;类;VFM;CSS2.1;
 
 VFM没有指定格式化的所有方面（比如letter－spacing的算法）。遵循用户代理有可能会对于此说明没有提到的格式化问题有不同的表现。
 
-### 9.1.1 视窗(Viewport)
+### 9.1.1 视窗
 
-...
+没啥好说的，就是你浏览页面大大的窗口。
 
-### 9.1.2 包含块(Containing Blocks)
+### 9.1.2 包含块
 
 在CSS2.1中，很多盒子位置和尺寸的计算是对于(respect to)长方形盒子（包含块）的边缘计算的。通常生成的盒子作为后代盒子的包含块。
 常说的“一个盒子的包含块”意思是“这个盒子存在于的包含块”，而不是它生成的。
@@ -40,7 +40,7 @@ VFM没有指定格式化的所有方面（比如letter－spacing的算法）。�
 
 在[下章](https://www.w3.org/TR/CSS2/visudet.html)会告诉你包含块的尺寸如何计算的[详细信息](https://www.w3.org/TR/CSS2/visudet.html#containing-block-details)。
 
-## 9.2 控制盒子的生成(Controlling Box Generation)
+## 9.2 控制盒子的生成
 
 接下来的一节描述了CSS2.1中可能会生成的盒子类型。盒子类型在某种程度上（in part）会影响它在VFM中的表现。
 在下面描述的display属性置顶了盒子类型。
@@ -50,14 +50,45 @@ VFM没有指定格式化的所有方面（比如letter－spacing的算法）。�
 块级元素是在原文档中显示格式化为block的元素（比如段落）。display属性值为'block','list-item'和'table'可以让元素称为块级元素。
 
 块级盒子是参与到[块级上下文](https://www.w3.org/TR/CSS2/visuren.html#block-formatting)的盒子。
-每个块级元素都会产生一个主(principal)块级盒子来包含后代盒子并生成内容，而且它也参与(involve in)了任何定位方案。
-一些块级元素有可能会产生除了（in addition to）主块级盒子外的其它盒子：如'list-item'元素。这些额外(additional)的盒子会针对主盒子被放置。
+每个块级元素都会产生一个块级盒子来包含后代盒子并生成内容，而且它也参与(involve in)了任何定位方案。
+一些块级元素有可能会产生除了主块级盒子外的其它盒子：如'list-item'元素。这些额外(additional)的盒子会针对主盒子被放置。
 
-除了table盒子（后续章节会提到）和替换元素，块级盒子也是块容器盒子(block container box)。
+除了table盒子（后续章节会提到）和替换元素，块级盒子也是块容器盒子。
 
 #### 9.2.1.1 匿名块盒子
 
-...
+```
+<div>
+  Some text
+  <p>More text
+</div>
+```
+（假设div和p都是display:block）
+
+如果在一个块容器盒子（比如上面为div生成的）内部有一个块级盒子（比如上面的p），那么我们就强制它内部只能包含块级盒子，所以
+为*Some text*这个文本声称了一个匿名块级盒子。
+
+当行内盒子包含一个块级普通流内盒子时，行内盒子（和与它在同一个行盒子的行内父元素）将会被打破并环绕块级盒子（和任何连续的或者
+仅仅被空格分割的兄弟元素），最终此行盒子被分割成两个盒子（即使某一边是空的）。分割的两个盒子被包含在匿名盒子里。
+
+```
+<!-- 来看个例子 -->
+p { display: inline; }
+span { display: block; }
+
+```
+
+```
+<p>
+  This is anonymous text before the span.
+  <span>This is the content of SPAN.</span>
+  This is anonymous text after the span.
+</p>
+
+<!--
+p元素包含一个匿名文本C1，块级元素，另一个匿名文本C2.
+-->
+```
 
 ### 9.2.2 行内级元素(Inline-level Elements)和行内盒子(Inline boxes)
 
@@ -71,7 +102,7 @@ VFM没有指定格式化的所有方面（比如letter－spacing的算法）。�
 
 #### 9.2.2.1 匿名行内盒子
 
-## 9.3 定位方案(Positioning Schemes)
+## 9.3 定位方案
 
 ...
 
@@ -83,9 +114,9 @@ VFM没有指定格式化的所有方面（比如letter－spacing的算法）。�
 
 ...
 
-## 9.4 普通流(Normal flow)
+## 9.4 普通流
 
-### 9.4.1 块格式化上下文(Block Formatting Contexts)
+### 9.4.1 块格式化上下文(BFC)
 
 浮动、绝对定位元素，不是块盒子的块容器（比如inline-blocks、table-cells和table-captions)和overflow不是visible的块盒子（except when that
 value has been propagated to the viewport)都会为内容创建一个BFC。
@@ -95,19 +126,19 @@ value has been propagated to the viewport)都会为内容创建一个BFC。
 在BFC中，每个盒子的左外边接触包含块的左边（对于从右到左的格式化，接触右边）。这个是正确的即使是对于float的展现（尽管一个盒子的杭盒子可能由于浮动而皱缩）
 ，除非盒子创建一个新的BFC（在这种情况下，盒子自身可能会因为浮动[变得更狭窄](https://www.w3.org/TR/CSS2/visuren.html#bfc-next-to-float)）。
 
-### 9.4.2 行内格式化上下文(Inline formatting Contexts)
+### 9.4.2 行内格式化上下文(IFC)
 
 在IFC中，盒子是从包含块的顶部水平地一个接一个放置的。水平方向的margin、border和padding是有效的。
 这些赫宰在竖直方向可能会有不同的方式排列：它们的顶部或底部，也可能是它们中的文本的基线。
 包含这些盒子的长方形区域（最终形成一条线）叫做行盒子（line box）
 
-### 9.4.3 相对定位(Relative Positioning)
+### 9.4.3 相对定位
 
-## 9.5 浮动(Floats)
+## 9.5 浮动
 
-### 9.5.1 定位浮动(Positioning The Float)：float属性
- 
-... 
+### 9.5.1 定位浮动：float属性
+
+...
 
 ### 9.5.2 控制浮动旁边的流：clear属性
 
@@ -138,9 +169,9 @@ others | same as specified
 
 ## 9.8 普通流、浮动和绝对定位的比较
 
-### 9.8.1 普通流(Normal Flow)
+### 9.8.1 普通流
 
-### 9.8.2 相对定位(Relative Positioning)
+### 9.8.2 相对定位
 
 ### 9.8.3 浮动一个盒子
 
@@ -179,7 +210,7 @@ may not come between any of its boxes.
 根元素形成根栈上下文。其他栈上下文通过任何**z-index**计算值不为**auto**的定位元素
 (包括相对定位)生成。栈上下文并不必须与包含块相关。
 
-~~在每个栈上下文，接下来的层按照从后往前的顺序绘制：~~
+在每个栈上下文，接下来的层按照从后往前的顺序绘制：
 ~~1. 形成栈上下文的元素的背景和边框；~~
 ~~2. 负数栈级别的子栈上下文；~~
 ~~3. 文档流内，非行内非定位的后代；~~
@@ -188,7 +219,15 @@ may not come between any of its boxes.
 ~~6. 栈级别是0的子栈上下文和栈级别是0的定位的后代元素；~~
 ~~7. 栈级别是正数的子栈上下文（值小的优先）。~~
 
-## 9.10 文字方向：direction和unicode-bidi属性
+1. 形成栈上下文元素的背景和边框；
+2. z-index是负值的子栈上下文（越负越优先，意思就是越小越优先）；
+3. 非inline级、非定位的流内后代元素；
+4. 非定位浮动元素；
+5. Inline级非定位的流内后代元素，包括inline table和inline block；
+6. z-index是0的子栈上下文和栈级别是栈上下文和z-index为0的定位后代元素；
+7. z-index为正数的子栈上下文（值小的优先）。
+
+~~ ## 9.10 文字方向：direction和unicode-bidi属性 ~~
 
 ## 结语
 

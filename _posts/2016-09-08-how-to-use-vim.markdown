@@ -32,6 +32,9 @@ tags: exvim;vim;使用;方法;终极;总结;入门;
 
 单指令是必须记住的，这里提几个组合指令。<br/>
 
+- **替换**: :s/a/b将该行的第一个a替换成b，:s/a/b/g替换该行的所有a，:n,ms/a/b替换n行到m行，%s/a/b替换所有行的第一个a，%s/a/b/g替换所有a
+- **选中**: v20G，选中当前行到第20行；V20G，选中当千行到第20行；
+- **zc/zo**: 折叠/展开代码块
 - **xp**: 交换相邻的两个字母；
 - **:9y**: 拷贝第9行，不必首先移动光标;
 - **ggvG**: 全选文件内容，不过我比较喜欢<ctrl + a>
@@ -40,6 +43,7 @@ tags: exvim;vim;使用;方法;终极;总结;入门;
 - **vip**: 选取当前光标所在段落
 - **<<**: 左缩进
 - **>>**: 右缩进
+- **ctrl+6**: 两个文件切换,[go further](http://stackoverflow.com/questions/19971023/how-to-go-back-to-previous-opened-file-in-vim)
 - **:bn**: 切换缓冲区（即编辑窗口） 
 - **:bp**: 切换缓冲区
 - **mx**: 添加（移除）x标签
@@ -48,6 +52,7 @@ tags: exvim;vim;使用;方法;终极;总结;入门;
 - **delm x**: 删除标签x
 - **:ls**: 查看缓冲区
 - **:bN**: 打开缓冲区No
+- **qa q @a @@**: qa是录制，q是停止录制，@a执行录制，@@执行最近的录制，90@@执行90次
 - **:shell/:sh**: 执行shell命令
 
 ## 常用功能
@@ -76,6 +81,11 @@ tags: exvim;vim;使用;方法;终极;总结;入门;
 什么是Zen-Coding?自行百度吧。[插件在这里](https://github.com/mattn/emmet-vim)
 有一点要说明，就是插件装完了输入html:5然后按快捷键 <Ctrl+y+,>居然不展开，最后发现需要把当前文件先保存成html格式才行，
 估计是这个插件对当前文件类型有检查。
+
+## 其他插件
+
+1. 自动闭合[], {}：https://github.com/jiangmiao/auto-pairs
+2. 自动闭合html标签（<C+_>）：http://vim.sourceforge.net/scripts/script.php?script_id=13
 
 ## 参考
 [exvim中文](http://exvim.github.io/docs-zh/)<br/>
