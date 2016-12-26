@@ -12,7 +12,7 @@ tags: table-cell;display;css;前端;
 最近看了几篇关于table-cell的用法，觉得[旭神](http://www.zhangxinxu.com/)总结的还不错，于是乎我就抄袭，不对，是模仿，也不合适，
 其实是微微扩展了以下，增加几点需要注意的地方。
 
-## 特性
+## 特性(Peculiarities)
 
 table-cell的特征就是跟table的td表现是一毛一样的；
 
@@ -65,8 +65,61 @@ table-cell的特征就是跟table的td表现是一毛一样的；
   </div>
 ```
 
-1. 如果左侧为空元素；
-2. 如果左侧子元素为img，并且max-width为100%；
+有两点需要提醒一下：
+
+1. 如果左侧元素只有img子元素，
+
+```
+ <div style="margin-top: 30px;">
+    <div style="display: table-cell;height:150px;width:150px;background:red;">
+      <img src="http://img15.3lian.com/2015/a1/16/d/204.jpg" width="200px">
+    </div>
+    <div style="display: table-cell;height:150px;width:150px;background:blue;">blue box</div>
+  </div>
+```
+
+先来看看对于inline-block容器也存在类似情况：
+
+```
+<div>x
+   <div style="display: inline-block;height:150px;width:150px;background:red;"></div>
+   <div style="display: inline-block;height:150px;width:150px;background:blue;">blue box</div>
+</div>
+```
+
+这两种情况涉及到inline-block元素的vertical-align的默认值，其默认baseline，
+那么baseline是什么？有三种情况：
+
+- 如果inline-block元素有流内内容，那么它的baseline就是最后一行内容的baseline；
+- 如果inline-block元素有流内内容，但是它的**overflow**是非**visible**的，那么它的baseline就是magin-box的底部；
+- 如果inline-block元素没有流内内容，那它的baseline是margin-box的底边界；
+
+看到这里应该就明白了为什么有这种垂直落差了吧，如果不明白，留言吧。
+
+为了解决这种问题，可以设置table-cell（或inline-box的vertical-align为top）。
+
+2. 如果左侧元素的子元素为img，并且max-width为100%，对比看看：
+
+```
+// img的max-width不为100%，并且第二个table-cell设置宽度很大比如100%或者9999999px
+<div style="margin-top: 30px;">
+    <div style="display: table-cell;height:150px;width:150px;background:red;">
+      <img src="http://img15.3lian.com/2015/a1/16/d/204.jpg" width="200px">
+    </div>
+    <div style="display:table-cell; height:150px; width:150px; background:blue;">blue box</div>
+  </div>
+
+// img的max-width为100%，并且第二个table-cell设置宽度很大比如100%或者9999999px
+<div style="margin-top: 30px;">
+    <div style="display: table-cell;height:150px;width:150px;background:red;">
+      <img style="max-width:100%" src="http://img15.3lian.com/2015/a1/16/d/204.jpg" width="200px">
+    </div>
+    <div style="display: table-cell;height:150px;width:150px;background:blue;">blue box</div>
+ </div>
+```
+
+聪明的你一眼就看到第二种情况第一个table-cell没了宽度，其主要原因是max-width的优先级高于width，所以此时的width无效了，所以img就被右侧的cell
+挤压没了，顺便说一句，min-width的优先级比max-width高。
 
 
 ### 两列等高布局
@@ -89,3 +142,6 @@ table-cell的特征就是跟table的td表现是一毛一样的；
 1.[我所知道的几种display:table-cell的应用](http://www.zhangxinxu.com/wordpress/2010/10/%E6%88%91%E6%89%80%E7%9F%A5%E9%81%93%E7%9A%84%E5%87%A0%E7%A7%8Ddisplaytable-cell%E7%9A%84%E5%BA%94%E7%94%A8/)<br/>
 2.[max-width](https://developer.mozilla.org/en-US/docs/Web/CSS/max-width)：来自MDN的传说<br/>
 3.[Block formatting contexts](https://www.w3.org/TR/CSS21/visuren.html#block-formatting)<br/>
+4.[the 'line-height' and 'vertical-align' properties](https://www.w3.org/TR/2011/REC-CSS2-20110607/visudet.html#line-height)
+5.[CSS深入理解vertical-align和line-height的基友关系](http://www.zhangxinxu.com/wordpress/2015/08/css-deep-understand-vertical-align-and-line-height/)
+6.[Vertical-Align: All You Need To Know](http://christopheraue.net/2014/03/05/vertical-align/)
