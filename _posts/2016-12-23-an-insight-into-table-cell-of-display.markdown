@@ -65,9 +65,9 @@ table-cell的特征就是跟table的td表现是一毛一样的；
   </div>
 ```
 
-有两点需要提醒一下：
+如果`左边的cell子元素只有img`，有两点需要提醒一下：
 
-1. 如果左侧元素只有img子元素，
+**第一点、** 如果未设置cell的max-width：
 
 ```
  <div style="margin-top: 30px;">
@@ -98,7 +98,7 @@ table-cell的特征就是跟table的td表现是一毛一样的；
 
 为了解决这种问题，可以设置table-cell（或inline-box的vertical-align为top）。
 
-2. 如果左侧元素的子元素为img，并且max-width为100%，对比看看：
+**第二点、**如果cell的max-width为100%，对比看看：
 
 ```
 // img的max-width不为100%，并且第二个table-cell设置宽度很大比如100%或者9999999px
