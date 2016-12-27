@@ -90,7 +90,7 @@ table-cell的特征就是跟table的td表现是一毛一样的；
 ```
  <div style="margin-top: 30px;">
     <div style="display: table-cell;height:150px;width:150px;background:red;">
-      <img src="http://img15.3lian.com/2015/a1/16/d/204.jpg" width="200px">
+      <img src="{{site.imageurl}}/assets/images/samples/cat1.jpg" width="200px">
     </div>
     <div style="display: table-cell;height:150px;width:150px;background:blue;">
       blue box
@@ -130,7 +130,7 @@ table-cell的特征就是跟table的td表现是一毛一样的；
 // img的max-width不为100%，并且第二个table-cell设置宽度很大比如100%或者9999999px
 <div style="margin-top: 30px;">
     <div style="display: table-cell;height:150px;width:150px;background:red;">
-      <img src="http://img15.3lian.com/2015/a1/16/d/204.jpg" width="200px">
+      <img src="{{site.imageurl}}/assets/images/samples/cat1.jpg" width="200px">
     </div>
     <div style="display:table-cell; height:150px; width:150px; background:blue;">
       blue box
@@ -144,7 +144,7 @@ table-cell的特征就是跟table的td表现是一毛一样的；
 // img的max-width为100%，并且第二个table-cell设置宽度很大比如100%或者9999999px
 <div>
   <div style="display: table-cell;background:red;">
-    <img style="max-width:100%" src="http://img15.3lian.com/2015/h1/280/d/5.jpg" width="100px">
+    <img style="max-width:100%" src="{{site.imageurl}}/assets/images/samples/cat1.jpg" width="100px">
   </div>
   <div style="display: table-cell;height:150px;width:100%;background:blue;">
     blue box
