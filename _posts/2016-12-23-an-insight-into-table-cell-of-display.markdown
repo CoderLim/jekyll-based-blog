@@ -7,10 +7,20 @@ description:
 tags: table-cell;display;css;前端;
 ---
 
-## 发言
+## 大妈式唠叨 
+
+还有一周2016就要过去了，时间过得太快，压抑的一年，好像什么都没做，闭目冥思，反思自我得失...我勒个去，文采不好，再唠叨真成大妈了。
+这一年听到最多的声音就是房价涨了，房价涨了，房价上蹿上蹿，一路飙升，疯了，全国都疯了，我也疯了，房租涨了，工资没涨，不好意思，我又禁不住
+啰嗦了两句，还是聊技术吧，只有技术最可靠。
 
 最近看了几篇关于table-cell的用法，觉得[旭神](http://www.zhangxinxu.com/)总结的还不错，于是乎我就抄袭，不对，是模仿，也不合适，
 其实是微微扩展了以下，增加几点需要注意的地方。
+
+## 支持度
+
+从下图可以看出，所有浏览器都支持的很好嘛。
+
+![caniuse]({{site.imageurl}}/assets/images/2016/table-cell-caniuse.png)
 
 ## 特性(Peculiarities)
 
@@ -52,7 +62,9 @@ table-cell的特征就是跟table的td表现是一毛一样的；
 
 ```
 <div style="line-height:150px; width:200px; border:1px solid red;">
-    <span style="display:inline-block; line-height:1; vertical-align:middle">vertical align vertical align vertical align vertical align vertical align vertical align vertical align </span>
+    <span style="display:inline-block; line-height:1; vertical-align:middle">
+      vertical align vertical align vertical align vertical align vertical align vertical align vertical align 
+    </span>
   </div>
 ```
 
@@ -60,10 +72,16 @@ table-cell的特征就是跟table的td表现是一毛一样的；
 
 ```
 <div style="clear">
-    <div style="float: left; width: 100px; height: 100px; background: red;">cell one</div>
-    <div style="display: table-cell; width: 100000px; background: blue;">cell two</div>
+    <div style="float: left; width: 100px; height: 100px; background: red;">
+      cell one
+    </div>
+    <div style="display: table-cell; width: 100000px; background: blue;">
+      cell two
+    </div>
   </div>
 ```
+
+![image]({{site.imageurl}}/assets/images/2016/table-cell-two-cols.png)
 
 如果`左边的cell子元素只有img`，有两点需要提醒一下：
 
@@ -74,18 +92,26 @@ table-cell的特征就是跟table的td表现是一毛一样的；
     <div style="display: table-cell;height:150px;width:150px;background:red;">
       <img src="http://img15.3lian.com/2015/a1/16/d/204.jpg" width="200px">
     </div>
-    <div style="display: table-cell;height:150px;width:150px;background:blue;">blue box</div>
+    <div style="display: table-cell;height:150px;width:150px;background:blue;">
+      blue box
+    </div>
   </div>
 ```
+
+![image]({{site.imageurl}}/assets/images/2016/table-cell-two-cols-1.1.png)
 
 先来看看对于inline-block容器也存在类似情况：
 
 ```
 <div>x
-   <div style="display: inline-block;height:150px;width:150px;background:red;"></div>
-   <div style="display: inline-block;height:150px;width:150px;background:blue;">blue box</div>
+   <div style="display:inline-block; height:150px; width:150px; background:red;"></div>
+   <div style="display:inline-block; height:150px; width:150px; background:blue;">
+     blue box
+   </div>
 </div>
 ```
+
+![image]({{site.imageurl}}/assets/images/2016/table-cell-two-cols-1.2.png)
 
 这两种情况涉及到inline-block元素的vertical-align的默认值，其默认baseline，
 那么baseline是什么？有三种情况：
@@ -106,20 +132,30 @@ table-cell的特征就是跟table的td表现是一毛一样的；
     <div style="display: table-cell;height:150px;width:150px;background:red;">
       <img src="http://img15.3lian.com/2015/a1/16/d/204.jpg" width="200px">
     </div>
-    <div style="display:table-cell; height:150px; width:150px; background:blue;">blue box</div>
-  </div>
-
-// img的max-width为100%，并且第二个table-cell设置宽度很大比如100%或者9999999px
-<div style="margin-top: 30px;">
-    <div style="display: table-cell;height:150px;width:150px;background:red;">
-      <img style="max-width:100%" src="http://img15.3lian.com/2015/a1/16/d/204.jpg" width="200px">
+    <div style="display:table-cell; height:150px; width:150px; background:blue;">
+      blue box
     </div>
-    <div style="display: table-cell;height:150px;width:150px;background:blue;">blue box</div>
- </div>
+  </div>
 ```
 
-聪明的你一眼就看到第二种情况第一个table-cell没了宽度，其主要原因是max-width的优先级高于width，所以此时的width无效了，所以img就被右侧的cell
-挤压没了，顺便说一句，min-width的优先级比max-width高。
+![image]({{site.imageurl}}/assets/images/2016/table-cell-two-cols-1.1.png)
+
+```
+// img的max-width为100%，并且第二个table-cell设置宽度很大比如100%或者9999999px
+<div>
+  <div style="display: table-cell;background:red;">
+    <img style="max-width:100%" src="http://img15.3lian.com/2015/h1/280/d/5.jpg" width="100px">
+  </div>
+  <div style="display: table-cell;height:150px;width:100%;background:blue;">
+    blue box
+  </div>
+</div>
+```
+
+![image]({{site.imageurl}}/assets/images/2016/table-cell-two-cols-2.2.png)
+
+聪明的你一眼就看到第二种情况第一个table-cell没了宽度，其主要原因是**max-width**的优先级**高于**width，所以此时的width无效了，所以img就被右侧的cell
+挤压没了，顺便说一句，**min-width**的优先级比**max-width**高。
 
 
 ### 两列等高布局
@@ -132,7 +168,9 @@ table-cell的特征就是跟table的td表现是一毛一样的；
       hello 
     </div>
     <div style="display:table-cell;background:red;width: 100%">
-      <div>abc def jkkl kada eix lllll ew a ee www qq  ccccc zzzdfa fdadfjaklew ieiie</div>
+      <div>
+        abc def jkkl kada eix lllll ew a ee www qq  ccccc zzzdfa fdadfjaklew ieiie
+      </div>
     </div>
   </div>
 ```
