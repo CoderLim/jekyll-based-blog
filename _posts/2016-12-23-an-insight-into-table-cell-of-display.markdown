@@ -177,9 +177,9 @@ table-cell的特征就是跟table的td表现是一毛一样的；
 
 ## 参考
 
-1.[我所知道的几种display:table-cell的应用](http://www.zhangxinxu.com/wordpress/2010/10/%E6%88%91%E6%89%80%E7%9F%A5%E9%81%93%E7%9A%84%E5%87%A0%E7%A7%8Ddisplaytable-cell%E7%9A%84%E5%BA%94%E7%94%A8/)<br/>
-2.[max-width](https://developer.mozilla.org/en-US/docs/Web/CSS/max-width)：来自MDN的传说<br/>
-3.[Block formatting contexts](https://www.w3.org/TR/CSS21/visuren.html#block-formatting)<br/>
-4.[the 'line-height' and 'vertical-align' properties](https://www.w3.org/TR/2011/REC-CSS2-20110607/visudet.html#line-height)
-5.[CSS深入理解vertical-align和line-height的基友关系](http://www.zhangxinxu.com/wordpress/2015/08/css-deep-understand-vertical-align-and-line-height/)
-6.[Vertical-Align: All You Need To Know](http://christopheraue.net/2014/03/05/vertical-align/)
+1.[我所知道的几种display:table-cell的应用](http://www.zhangxinxu.com/wordpress/2010/10/%E6%88%91%E6%89%80%E7%9F%A5%E9%81%93%E7%9A%84%E5%87%A0%E7%A7%8Ddisplaytable-cell%E7%9A%84%E5%BA%94%E7%94%A8/)<br>
+2.[max-width](https://developer.mozilla.org/en-US/docs/Web/CSS/max-width)：来自MDN的传说<br>
+3.[Block formatting contexts](https://www.w3.org/TR/CSS21/visuren.html#block-formatting)<br>
+4.[the 'line-height' and 'vertical-align' properties](https://www.w3.org/TR/2011/REC-CSS2-20110607/visudet.html#line-height)<br>
+5.[CSS深入理解vertical-align和line-height的基友关系](http://www.zhangxinxu.com/wordpress/2015/08/css-deep-understand-vertical-align-and-line-height/)<br>
+6.[Vertical-Align: All You Need To Know](http://christopheraue.net/2014/03/05/vertical-align/)<br>
