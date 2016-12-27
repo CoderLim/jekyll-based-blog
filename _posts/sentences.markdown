@@ -1,1 +1,0 @@
-1. This clarifies some of the most **disturbing** layout **mysteries**.
