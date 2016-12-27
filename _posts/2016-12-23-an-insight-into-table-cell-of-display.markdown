@@ -100,7 +100,7 @@ table-cell的特征就是跟table的td表现是一毛一样的；
 
 ![image]({{site.imageurl}}/assets/images/2016/table-cell-two-cols-1.1.png)
 
-先来看看对于inline-block容器也存在类似情况：
+咦？怎么cell变高了，基本上快2倍了，对于inline-block容器也存在类似情况：
 
 ```
 <div>x
