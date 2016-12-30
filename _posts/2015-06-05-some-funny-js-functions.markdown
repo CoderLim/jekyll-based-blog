@@ -128,6 +128,22 @@ console.log(sum(1, 10000));
 ```
 
 
+## Spread
+
+展开你的参数，看示例：
+
+```
+function spread(fn) {
+  return Function.prototype.apply.bind(fn, null);
+}
+
+var fn = spread(function (x, y) {
+  console.log(x, y);
+})
+
+fn([1,2])
+```
+
 ## 参考
 
 > [JS魔法堂：函数节流（throttle）与函数去抖（debounce）](http://www.cnblogs.com/fsjohnhuang/p/4147810.html)：这里貌似比我说的更形象<br/>
