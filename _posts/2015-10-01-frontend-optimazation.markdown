@@ -10,11 +10,12 @@ tags: 前端;性能优化
 ## 导语:
 
 > 性能对于程序来说至关重要。本文主要内容是对[文章](https://developer.yahoo.com/performance/rules.html)的翻译，再加上对平常遇到的优化tip，
-> 从Content、Server、Cookie、CSS、Javascript、Images、Mobile几方面做了个简单的阐述。
+> 从<a href="#content">Content</a>、<a href="#server">Server</a>、<a href="#cookie">Cookie</a>、
+<a href="#css">CSS</a>、<a href="#javascript">Javascript</a>、<a href="#image">Images</a>、<a href="#mobile">Mobile</a>几方面做了个简单的阐述。
 
 这里有篇文章，介绍的点很多：[点击进入](http://www.jianshu.com/p/be5aea4a222f)
 
-## Content
+## <a name="content">Content</a>
 
 ### 1、减少Http请求
 
@@ -27,7 +28,7 @@ tags: 前端;性能优化
 - 图片映射：不推荐，想了解[猛戳这里](https://www.w3.org/TR/html401/struct/objects.html#h-13.6)；
 - 行内图片：使用[data:URL scheme](http://tools.ietf.org/html/rfc2397)把图片数据嵌入到实际页面。这种方式还没被所有主流浏览器支持。
 
-### 2、<a name="item-2">减少DNS查询</a>
+### <a name="content-2">2、减少DNS查询</a>
 
 DNS(Domain Name System)用来映射主机名和ip地址。当你输入网址到你的浏览器，浏览器会与DNS解析器通讯返回服务器的ip地址。DNS有时间消耗，通常查询一个主机名的ip地址需要20-120毫秒。浏览器只有在DNS找到对应主机名的ip地址完成后，才能下载任何东西。
 
@@ -39,7 +40,7 @@ IE默认缓存DNS查询是30分钟，是由注册表的DnsCacheTimeout指定的�
 
 减少唯一主机名的数量潜在的会减少发生在页面中并行下载的数量。避免DNS查询减少响应次数，但是减少并行下载的数量可能会增加响应次数。我的指导意见是分离这些组件到2-4个主机名下。这个结果是在减少DNS查询和允许高度并行下载之间的折中。
 
-### 3、避免重定向
+### <a name="content-3">3、避免重定向</a>
 
 重定向的[http状态码][1]是301和302。这里有个301的例子：
 
@@ -69,11 +70,11 @@ Alias 或者 mod_rewrite，或者DirectorySlash指令修复。
 虽然ajax请求可以异步获取数据，但是异步并不是瞬间获得的，所以为了提高性能，优化ajax响应是很重要的。最重要的一种方式就是让ajax响应可
 缓存，正如在过期时间和cache-control讲到的。一些规则同样适用于ajax：
 
-- 压缩组件
-- <a href="#item-2">减少DNS查询</a>
+- <a href="#server-3">Gzip压缩组件</a>
+- <a href="#content-2">减少DNS查询</a>
 - 让我的js变小
-- 避免重定向
-- 配置ETags
+- <a href="#content-3">避免重定向</a>
+- <a href="#server-4">配置ETags</a>
 
 ### 5、延迟加载组件
 
@@ -105,15 +106,15 @@ HTTP请求是很耗时的，因此发送一个HTTP请求并且收到不可用的
 
 有些站点有有用的404页面"Did you mean X?"，这个有很好的用户体验，但是也同样消耗了服务器资源（比如数据库）。更糟糕的是当页面链接到外部Javascript报404错误。首先，这个下载会阻塞并行下载，然后浏览器会把404响应当成js代码解析，试图在里面找到可用的内容。
 
-## Server
+## <a name="server">Server</a>
 
 ### 1、使用CND
 
 ### 2、设置头文件过期或者静态缓存
 
-### 3、Gzip压缩组件
+### <a name="server-3">3、Gzip压缩组件</a>
 
-### 4、配置ETags
+### <a name="server-4">4、配置ETags</a>
 
 ### 5、尽早释放缓存
 
@@ -127,7 +128,7 @@ Yahoo!Mail团队在使用XMLHttpRequest时发现：POST请求在浏览器中的�
 
 ### 7、Image避免空src
 
-## Cookie
+## <a name="cookie">Cookie</a>
 
 ### 1、减小Cookie大小
 
@@ -141,7 +142,7 @@ Yahoo!Mail团队在使用XMLHttpRequest时发现：POST请求在浏览器中的�
 静态资源放到cookie无关的域名还有另一个好处：一些代理拒绝缓存带着cookie请求的组件。与此相关的,如果你在考虑主页使用example.org域名还是使用www.example.org,应该考虑cookie的影响。删除www会让你只能把cookie写在*.example.org下，因此为了性能的原因最好使用www
 的子域名，并把cookie写在子域名下。
 
-## CSS
+## <a name="css">CSS</a>
 
 ### 1、把样式表放到上边
 
@@ -153,7 +154,7 @@ Yahoo!Mail团队在使用XMLHttpRequest时发现：POST请求在浏览器中的�
 
 ### 5、[如何提升 CSS 选择器性能](http://www.jianshu.com/p/268c7f3dd7a6)
 
-## Javascript
+## <a name="javascript">Javascript</a>
 
 
 关于语法的优化，直接上张图：
@@ -180,7 +181,7 @@ Yahoo!Mail团队在使用XMLHttpRequest时发现：POST请求在浏览器中的�
 
 更多的信息请查看Julien Lecomte写的YUI theatre's "High Performance Ajax Applications"
 
-## Images
+## <a name="image">Images</a>
 
 ### 1、优化图片
 
@@ -199,7 +200,7 @@ favicon.ico 是保存在服务器网站根目录的图片。它是一个必然�
 
 [imagemagick](http://www.imagemagick.org/script/index.php)可以帮你创建小favicons.
 
-## Mobile
+## <a name="mobile">Mobile</a>
 
 ### 1、使组件小于25KB
 
