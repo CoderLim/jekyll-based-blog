@@ -11,7 +11,8 @@ tags: 前端;性能优化
 
 > 性能对于程序来说至关重要。本文主要内容是对[文章](https://developer.yahoo.com/performance/rules.html)的翻译，再加上对平常遇到的优化tip，
 > 从<a href="#content">Content</a>、<a href="#server">Server</a>、<a href="#cookie">Cookie</a>、
-<a href="#css">CSS</a>、<a href="#javascript">Javascript</a>、<a href="#image">Images</a>、<a href="#mobile">Mobile</a>几方面做了个简单的阐述。
+> <a href="#css">CSS</a>、<a href="#javascript">Javascript</a>、<a href="#image">Images</a>、<a href="#mobile">Mobile</a>几方面做了个简单的阐述。
+> 对于看到标题就知道什么意思的就不翻译了，^_^ 
 
 这里有篇文章，介绍的点很多：[点击进入](http://www.jianshu.com/p/be5aea4a222f)
 
@@ -78,11 +79,27 @@ Alias 或者 mod_rewrite，或者DirectorySlash指令修复。
 
 ### 5、延迟加载组件
 
+延迟加载就是当用到的时候再加在，比如图片加载，在页面滚动到该图片的时候再加载，处理这种情况目前比较流行的插件是jQ插件[lazyLoad](https://github.com/tuupola/jquery_lazyload)
+
 ### 6、预加载组件
+
+预加载看起来与延迟加载是相对的，其实还是有不同的。预加载是利用浏览器空闲时间下载未来将会用到的组件（image、js、css等）。
+
+- 无条件预加载：只要页面onload（如果你不知道onload是什么？请关掉本页^_^）函数被触发就加载。
+- 有条件预加载：基于用户行动来猜测用户下一步将要去哪儿来预加载，可以看看[search.yahoo.com](https://search.yahoo.com/)。
+- 预期预加载：这个是关于页面重新设计后没有任何缓存的情况下，如何提高性能，不做深入讨论了。
 
 ### 7、减少DOM元素数量
 
+不用过多解释了吧，如果dom节点过多对于重绘和回流的开销都很大，比如一个p标签就搞定的文档，偏要这样搞：<div><div><p>haha</p></div></div>，
+这是强行增加浏览器的任务量啊。
+
 ### 8、跨域分离组件
+
+分离组件到不同的域名下，比如js、css和image放到一个服务器，其它动态页面放到另一个服务器，这样可以利用浏览器的并行加载提高性能。
+分离要保证域名个数为2-4个，不要太多因为浏览器对并行个数有限制，而且域名过多会导致DNS查询降低系统性能。
+
+更多信息可以参考：[Maximizing Parallel Downloads in the Carpool Lane](http://yuiblog.com/blog/2007/04/11/performance-research-part-4/)
 
 ### 9、最小化iframe个数
 
@@ -108,11 +125,27 @@ HTTP请求是很耗时的，因此发送一个HTTP请求并且收到不可用的
 
 ## <a name="server">Server</a>
 
-### 1、使用CND
+### 1、使用<abbr title="content delivery network">CND</abbr>
 
-### 2、设置头文件过期或者静态缓存
+CDN中文名：内容分发网络，是一个被分配到不通地域的服务器集合，为了给用户提供更高效的响应。至于根据什么条件使用哪台服务器提供内容，超出我们的宗旨了，我们的宗旨是
+点到为止^_^。
+
+### 2、设置expires或者cache-control
+
+这里提一下两者的区别：expires设置的是绝对时间，而cache-control: max-age=xxx 设置的是相对时间。后者更有用，因为不通服务器的时间可能会有差别，所以
+设置绝对时间是不可取的。
+
+对于过期时间有两点需要注意：
+
+- 静态组件：可以设置成永远不过期，就是设置expires为未来很远很远很远（萌妹子语气）的日期。
+- 动态组件：使用cache-control头来帮助浏览器有条件的请求，至于过期时间如何设置要根据动态组件的变化频率设置。
 
 ### <a name="server-3">3、Gzip压缩组件</a>
+
+组件压缩后需要传输的数据量就大大减少了，从而减少响应时间。
+
+对于HTTP/1.1，web客户端可以通过请求头`Accept-Encoding: gzip, deflate`来表明自己支持压缩，如果web服务器看到这个请求头，它可能就会用某个客户端提供的压缩方式
+压缩响应数据，并通过响应头`Content-Encoding: gzip`通知客户端用什么方式压缩的。
 
 ### <a name="server-4">4、配置ETags</a>
 
@@ -132,6 +165,8 @@ Yahoo!Mail团队在使用XMLHttpRequest时发现：POST请求在浏览器中的�
 
 ### 1、减小Cookie大小
 
+在访问某域名的服务器时会携带所有该域名下相关的cookie，如果cookie变大，会严重影响系统性能。
+
 ### 2、为组件使用无Cookie的域名
 
 当浏览器请求一张静态图片时也会带着cookie，但是服务器并不会使用这些cookie。因此他们无合理原因的创建了网络流量。你应该确保静态组件应该是无cookie的请求。创建一个自域名并把你的静态资源放那里。
@@ -146,22 +181,36 @@ Yahoo!Mail团队在使用XMLHttpRequest时发现：POST请求在浏览器中的�
 
 ### 1、把样式表放到上边
 
+通过实践证明，将样式表放到页面（html）的上面，会让页面加载更快速。因为这样可以逐步渲染页面了。
+
 ### 2、避免Css表达式
+
+避免，就不要用了，为什么？因为影响性能。为什么？因为。。。我也不知道。
 
 ### 3、选择<link>而不是@import
 
+记住，记住。
+
 ### 4、不要使用过滤器
 
-### 5、[如何提升 CSS 选择器性能](http://www.jianshu.com/p/268c7f3dd7a6)
+记住，记住。
+
+### 5、[如何提升CSS选择器性能](http://www.jianshu.com/p/268c7f3dd7a6)
+
+请点击上面的链接。
+
+CSS选择器的性能：#id > class > 标签选择器 > 相邻选择器(+) > 兄弟选择器(~) > 子选择器（>）> 后代选择器（desendant） > *（通配符选择器） 
+              > 属性选择器(attr) > 伪类选择器（pesudo）
 
 ## <a name="javascript">Javascript</a>
-
 
 关于语法的优化，直接上张图：
 
 ![image]({{ site.imageurl }}/assets/images/2016/javascript-syntax-optimize.png)
 
 ### 1、把Scripts放到底部
+
+因为放到上面会阻塞页面加载。
 
 ### 2、使用外部的js和css
 
