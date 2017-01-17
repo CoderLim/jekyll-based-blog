@@ -9,12 +9,8 @@ tags: 前端;性能优化
 
 ## 导语:
 
-> 性能对于程序来说至关重要。本文主要内容是对[文章](https://developer.yahoo.com/performance/rules.html)的翻译，再加上平常碰到的优化Tip，
-> 从Content、Server、Cookie、CSS、Javascript、Images、Mobile几方面总结。
->
-> 文中翻译的是需要解释的tip，所以有些看小标题就知道如何优化的我就不翻译了，如果这些未翻译的tip有需要的朋友可以给我留言。
->
-> 本文章后续会把每个优化方案的翻译呈现给大家。
+> 性能对于程序来说至关重要。本文主要内容是对[文章](https://developer.yahoo.com/performance/rules.html)的翻译，再加上对平常遇到的优化tip，
+> 从Content、Server、Cookie、CSS、Javascript、Images、Mobile几方面做了个简单的阐述。
 
 这里有篇文章，介绍的点很多：[点击进入](http://www.jianshu.com/p/be5aea4a222f)
 
@@ -31,7 +27,7 @@ tags: 前端;性能优化
 - 图片映射：不推荐，想了解[猛戳这里](https://www.w3.org/TR/html401/struct/objects.html#h-13.6)；
 - 行内图片：使用[data:URL scheme](http://tools.ietf.org/html/rfc2397)把图片数据嵌入到实际页面。这种方式还没被所有主流浏览器支持。
 
-### 2、减少DNS查询
+### 2、<div id="item-2">减少DNS查询</div>
 
 DNS(Domain Name System)用来映射主机名和ip地址。当你输入网址到你的浏览器，浏览器会与DNS解析器通讯返回服务器的ip地址。DNS有时间消耗，通常查询一个主机名的ip地址需要20-120毫秒。浏览器只有在DNS找到对应主机名的ip地址完成后，才能下载任何东西。
 
@@ -68,7 +64,16 @@ Alias 或者 mod_rewrite，或者DirectorySlash指令修复。
 
 连接一个老站点和新站点是另一个常见的使用重定向的情况。使用重定向链接两个站点很简单，并且只需要很少的代码，但是这降低了用户体验。
 
-### 4、使用Ajax缓存
+### 4、缓存Ajax请求
+
+虽然ajax请求可以异步获取数据，但是异步并不是瞬间获得的，所以为了提高性能，优化ajax响应是很重要的。最重要的一种方式就是让ajax响应可
+缓存，正如在过期时间和cache-control讲到的。一些规则同样适用于ajax：
+
+- 压缩组件
+- <a href="#item-2">减少DNS查询</a>
+- 让我的js变小
+- 避免重定向
+- 配置ETags
 
 ### 5、延迟加载组件
 
