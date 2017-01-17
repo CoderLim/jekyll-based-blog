@@ -10,7 +10,7 @@ tags: 前端;javascript;;
 
 ![image]({{ site.imageurl }}/assets/images/2016/difference-es5-es6-in-react.png) <br/>
 
-不知道你们看到这样图是什么感受，我的感觉是：心如止水，但是感觉某个帐篷在抖动( ´ ▽ ` )ﾉ
+放一张毫无意义的图。
 
 ## 前言
 
